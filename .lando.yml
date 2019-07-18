@@ -1,0 +1,4 @@
+name: brand
+recipe: wordpress
+config:
+  webroot: web
