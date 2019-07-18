@@ -11,7 +11,7 @@
     "watch:css": "onchange 'css/**/*.css' -- npm-run-all build:css browser-sync-reload",
     "watch:js": "onchange 'js/**/*.js' -- npm-run-all build:js browser-sync-reload",
     "watch:templates": "onchange '**/*.php' -- npm run browser-sync-reload",
-    "watch:browser-sync": "browser-sync start --https --proxy 'https://site.lndo.site' --no-inject-changes --no-open",
+    "watch:browser-sync": "browser-sync start --https --proxy 'https://brand.lndo.site' --no-inject-changes --no-open",
     "browser-sync-reload": "browser-sync reload --url https://localhost:3000"
   },
   "keywords": [],
