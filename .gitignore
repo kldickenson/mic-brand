@@ -20,6 +20,10 @@
 /web/sitemap.xml
 /web/sitemap.xml.gz
 
+# Theme files to ignore
+/web/wp-content/themes/brand/node_modules
+/web/wp-content/themes/brand/package-lock.json
+
 .idea
 .vscode
 .DS_Store

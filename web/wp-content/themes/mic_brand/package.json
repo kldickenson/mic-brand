@@ -1,13 +1,13 @@
 {
-  "name": "creative-wp-theme",
+  "name": "MiCreative Brand",
   "version": "1.0.0",
   "description": "WordPress starter theme for Michigan Creative.",
   "main": "index.js",
   "scripts": {
     "start": "npm-run-all --parallel watch:*",
     "build": "npm-run-all build:*",
-    "build:css": "postcss css/main.css -o dist/style.css",
-    "build:js": "babel js/app.js --out-file dist/app.js",
+    "build:css": "postcss css/src/main.css -o css/dist/style.css",
+    "build:js": "babel js/src/app.js --out-file js/dist/app.js",
     "watch:css": "onchange 'css/**/*.css' -- npm-run-all build:css browser-sync-reload",
     "watch:js": "onchange 'js/**/*.js' -- npm-run-all build:js browser-sync-reload",
     "watch:templates": "onchange '**/*.php' -- npm run browser-sync-reload",
