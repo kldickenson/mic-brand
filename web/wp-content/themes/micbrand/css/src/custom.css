@@ -1,0 +1,101 @@
+/* purgecss start ignore */
+/* * * * * * * * * BRAND specific CSS * * * * * * * * */
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+.screen-reader-text:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
+}
+/* * * * Header * * * */
+img.logo-image {
+  max-width: 340px;
+}
+
+/* * * * Search * * * */
+form.search-form {
+  display: inline-block;
+}
+.search-field {
+ min-width: 200px
+}
+.search-field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+.search-field:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+}
+.search-field::-ms-input-placeholder { /* Microsoft Edge */
+  color: white;
+}
+
+/* * * * Menu * * * */
+#primary-menu {
+  padding-bottom: 0;
+}
+#primary-menu li {
+  line-height: 1.2em;
+  padding: .5rem 0;
+  flex-grow:1;
+}
+#primary-menu li:last-child a {
+  margin-left: 0;
+}
+#primary-menu li:last-child a {
+  margin-right: 0;
+  border-right: none;
+}
+#primary-menu li a {
+  display: block;
+  height: 100%;
+  padding: 0 .75rem;
+  text-align: center;
+  border-right: 1px solid white;
+
+}
+#primary-menu li:hover,
+#primary-menu li:focus {
+  background-color: rgba(255,255,255,.15);
+}
+.homeicon a {
+  display: inline-block;
+  background: url(../../img/iconmonstr-home-6.svg) center bottom no-repeat;
+  background-size: contain;
+  min-width: 3em;
+}
+.current-menu-item {
+  background: url(../../img/menu-active-bar.svg) bottom center no-repeat;
+  background-size: 100% 8px;
+  background-origin: padding-box;
+}
+@media (min-width: 640px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* * * * * * * end of BRAND specific CSS * * * * * * * */
+/* purgecss end ignore */

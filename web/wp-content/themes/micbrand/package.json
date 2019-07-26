@@ -1,0 +1,37 @@
+{
+  "name": "micbrand",
+  "version": "1.0.0",
+  "description": "WordPress starter theme for Michigan Creative.",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx npm-run-all --parallel watch:*",
+    "build": "npx npm-run-all build:*",
+    "build:css": "npx postcss css/src/main.css -o css/dist/style.css",
+    "build:js": "npx babel js/src/app.js --out-file js/dist/app.js",
+    "watch:css": "npx onchange 'css/**/*.css' -- npm-run-all build:css browser-sync-reload",
+    "watch:js": "npx onchange 'js/**/*.js' -- npm-run-all build:js browser-sync-reload",
+    "watch:templates": "npx onchange '**/*.php' -- npm run browser-sync-reload",
+    "watch:browser-sync": "npx browser-sync start --https --proxy 'https://brand.lndo.site' --no-inject-changes --no-open",
+    "browser-sync-reload": "npx browser-sync reload --url https://localhost:3000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@fullhuman/postcss-purgecss": "^1.1.0",
+    "autoprefixer": "^9.4.4",
+    "browser-sync": "^2.26.3",
+    "cssnano": "^4.1.8",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^5.2.0",
+    "postcss-cli": "^6.1.0",
+    "postcss-import": "^12.0.1",
+    "postcss-preset-env": "^6.5.0"
+  },
+  "dependencies": {
+    "tailwindcss": "^1.0.5"
+  }
+}
