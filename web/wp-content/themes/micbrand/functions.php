@@ -43,9 +43,17 @@ if ( ! function_exists( 'micbrand_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'micbrand' ),
-		) );
+		function register_micbrand_menus() {
+			register_nav_menus(
+				array(
+					'header-menu' => esc_html__( 'Header Menu', 'micbrand' ),
+					'full-menu' => esc_html__( 'Full Menu', 'micbrand' ),
+					'footer-menu' => esc_html__( 'Footer', 'micbrand' ),
+					'footer-contact' => esc_html__( 'Footer Contact', 'micbrand' )
+				)
+			);
+		}
+		add_action( 'init', 'register_micbrand_menus' );
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -113,8 +121,19 @@ function micbrand_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+		register_sidebar( array(
+		'name'          => esc_html__( 'Footer', 'micbrand' ),
+		'id'            => 'footer-1',
+		'description'   => esc_html__( 'Add widgets here.', 'micbrand' ),
+		'before_widget' => '<section id="%1$s" class="footer-widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h4 class="footer-widget-title">',
+		'after_title'   => '</h4>',
+	) );
 }
 add_action( 'widgets_init', 'micbrand_widgets_init' );
+
+
 
 /**
  * Enqueue scripts and styles.
