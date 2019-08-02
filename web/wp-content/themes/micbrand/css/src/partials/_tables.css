@@ -1,0 +1,78 @@
+table {
+  margin: 4rem 0;
+}
+td, th {
+  padding: .75rem 1rem .75rem 3rem;
+  border-bottom:  1px solid #000;
+  text-align: left;
+  vertical-align: top;
+}
+tr.center td {
+   text-align: center;
+   padding-left: 1rem;
+}
+
+thead {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+thead td, thead th {
+  padding-left: 1rem;
+  border-bottom:  2px solid #000;
+  text-align: left;
+  vertical-align: bottom;
+}
+
+tbody {
+    border-top: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+}
+tbody th {
+  font-weight: normal;
+}
+tbody td, tbody th {
+  padding-left: 3rem;
+  /* border-bottom-width:  1px; */
+  text-align: left;
+  vertical-align: top;
+}
+tbody td:first-child, tr th:first-child {
+   padding-left: 1rem;
+}
+
+tfoot th, tfoot td {
+  border: none;
+  padding: .5rem 1rem;
+
+}
+tfoot {
+  font-size: .75rem;
+  border-bottom: none;
+}
+
+ /* * * * * * * * Table with Swatches * * * * * * * */
+table.swatches td {
+  padding-left: 1rem;
+}
+
+
+ /* * * * * * * * Zebra stipes * * * * * * * */
+table.zebra tr:nth-child(even) {
+  background: white;
+}
+table.zebra tr:nth-child(1) {
+  background:transparent;
+}
+table.zebra thead th {
+  text-align: center;
+}
+
+ /* * * * * * * * Rules * * * * * * * */
+table.rules th,
+table.rules td {
+   border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+table.rules th:last-child,
+table.rules td:last-child {
+   border-right: none;
+}

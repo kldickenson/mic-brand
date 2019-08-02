@@ -1,0 +1,129 @@
+/* purgecss start ignore */
+/* * * * * * * * * BRAND specific CSS * * * * * * * * */
+
+html {
+  font-family: "Montserrat";
+  line-height: 1.4rem;
+}
+
+h1, h2, h3, h4, h5 {
+  text-transform: uppercase;
+  color: #00274c;;
+  margin-bottom: 1rem;
+  line-height: 1em;
+}
+h1, h2 {
+  color: #ffcb05;
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 800;
+}
+h2 {
+  font-size: 1.875rem; /* text-3xl */
+}
+h3 {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 900;
+}
+h4 {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 900;
+}
+h5 {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+p.intro {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 500;
+}
+* + p.intro {
+  margin-top: 1rem;
+}
+
+/* Making sure these are scoped to the page content area */
+.site-main a {
+  text-decoration: none;
+  color: #024794;
+}
+.site-main a:hover,
+.site-main a:focus {
+  text-decoration: underline;
+}
+.site-main ol,
+.site-main ul {
+   margin-bottom: 1rem;
+}
+.site-main ol li {
+   list-style: decimal;
+   margin-left: 1.125rem;
+}
+.site-main ul li {
+   list-style: disc;
+   margin-left: 1.125rem;
+}
+figure {
+  width: 50%;
+  margin-bottom: 4rem;
+  margin-right: 2rem;
+}
+figure img {
+  margin-top: .375rem;
+}
+figcaption {
+  padding-top: .25rem;
+  margin-bottom: 1rem;
+  font: bold .85rem "Roboto";
+}
+p {
+  margin-bottom: 1rem;
+}
+
+blockquote {
+  margin: 4rem 10%;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 1.2em;
+}
+blockquote p {
+  margin-bottom: .5rem;
+}
+blockquote footer {
+  font-size: .9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+blockquote cite {
+  font-style: normal;
+}
+
+.site-main .full-width {
+  margin-left: 0;
+  margin-top: 4rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+/* Allowing for "hang-over" */
+  figure {
+    width: 50%;
+    margin-left: 0; /*Fall back for browsers that do not read negative margins*/
+    margin-left: -30%;
+ }
+  .site-main .full-width {
+    margin-left: 0; /*Fall back for browsers that do not read negative margins*/
+    margin-left: -30%;
+    /* TODO: need a fall-back for the width as well */
+    width: 130%;
+    clear: both;
+  }
+  .site-main .full-width p {
+    width: 50%;
+  }
+ }
+
+/* * * * * * * end of BRAND specific CSS * * * * * * * */
+/* purgecss end ignore */
