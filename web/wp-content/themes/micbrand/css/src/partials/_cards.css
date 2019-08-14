@@ -1,0 +1,50 @@
+/* * * * * * * * Cards * * * * * * * */
+   .card-container {
+      display: flex;
+      flex-wrap: wrap;
+   }
+
+   .card {
+      margin-bottom: 4rem;
+      height: 250px;
+   }
+   .card h3 {
+      border-bottom: 1px solid rgba(0,0,0,.1);
+   }
+   .card h3:after {
+      padding-left: 0.5rem;
+      content: url(../../img/arrow-alt-circle-right-solid-sm.svg);
+      width: auto;
+      height: 1rem;
+   }
+   .card p:after {
+      padding-left: 0.5rem;
+      content: ">";
+      color: #024794;
+      font-weight: 700;
+   }
+   .card a {
+      text-decoration: none;
+      }
+   .card img {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 50px, 20px 30px, 0 10px);
+      object-fit: cover;
+   }
+
+   .image-bottom {
+      /* margin-left: 2rem;
+      margin-bottom: 2rem; */
+      height: 200px;
+   }
+   .image-bottom h3 {
+      border: none;
+      font-size: 1.125rem;
+   }
+   .image-bottom img {
+      clip-path: polygon(0 0, 20px 0, 40px 20px, 60px 0, 100% 0, 100% 100%, 0 100%);
+      object-fit: contain;
+
+   }
+   @media (min-width: 768px) {
+
+   }

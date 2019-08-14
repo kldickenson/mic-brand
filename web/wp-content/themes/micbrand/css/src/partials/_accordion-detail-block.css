@@ -1,0 +1,38 @@
+   .accordion {
+      text-align: left;
+      width: 100%;
+      margin: 1rem 0;
+   }
+
+   /* * * * CLOSED = default styling * * * */
+   .accordion summary {
+      cursor: pointer;
+      font-weight: 700;
+      line-height: 1;
+      text-transform: uppercase;
+      text-decoration: none;
+
+   }
+   .accordion summary:hover {
+      background: #00274c;
+      color: white;
+      text-decoration: none;
+   }
+
+   /* * * * open/closed icons * * * */
+   .accordion summary::after {
+      content: url(../../img/add-solid.svg);
+      float: right;
+      padding-left: 1rem;
+      width: 1.25rem;
+      height: auto;
+   }
+   .accordion summary:hover::after{
+      content: url(../../img/add-solid-hover.svg);
+   }
+   .accordion[open] summary:after {
+      content: url(../../img/minus-solid.svg);
+   }
+   .accordion[open] summary:hover::after {
+      content: url(../../img/minus-solid-hover.svg);
+   }

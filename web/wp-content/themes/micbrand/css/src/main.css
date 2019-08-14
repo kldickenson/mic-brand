@@ -4,9 +4,15 @@
 
 @import "base.css";
 
+@import "partials/_homepage.css";
+
 @import "partials/_tables.css";
 
-@import "partials/_accordion.css";
+@import "partials/_accordion-with-input.css";
+
+@import "partials/_accordion-detail-block.css";
+
+@import "partials/_cards.css";
 
 @import "custom.css";
 

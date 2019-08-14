@@ -8,8 +8,8 @@
     "build": "npx npm-run-all build:*",
     "build:css": "npx postcss css/src/main.css -o css/dist/style.css",
     "build:js": "npx babel js/src/app.js --out-file js/dist/app.js",
-    "watch:css": "npx onchange 'css/**/*.css' -- npm-run-all build:css browser-sync-reload",
-    "watch:js": "npx onchange 'js/**/*.js' -- npm-run-all build:js browser-sync-reload",
+    "watch:css": "npx onchange 'css/src/**/*.css' -- npm-run-all build:css browser-sync-reload",
+    "watch:js": "npx onchange 'js/src/*.js' -- npm-run-all build:js browser-sync-reload",
     "watch:templates": "npx onchange '**/*.php' -- npm run browser-sync-reload",
     "watch:browser-sync": "npx browser-sync start --https --proxy 'https://brand.lndo.site' --no-inject-changes --no-open",
     "browser-sync-reload": "npx browser-sync reload --url https://localhost:3000"

@@ -113,14 +113,14 @@ form.search-form {
   border-bottom: 0;
 }
 
-.homeicon a {
+.menu-item-home a {
   display: inline-block;
   background: url(../../img/iconmonstr-home-6.svg) center bottom no-repeat;
   background-size: 1rem;
   min-width: 4em;
   text-indent: -1000px;
 }
-.open .homeicon a {
+.open .menu-item-home a {
   background-position: 1rem;
   background-size: auto;
 }
@@ -184,7 +184,7 @@ form.search-form {
 @media (min-width: 1024px) {
 
   #masthead {
-    height: 205px;
+    height: 180px;
   }
   .menu-toggle {
     display: none;
@@ -233,7 +233,10 @@ form.search-form {
       text-align: center;
       border-right: 1px solid white;
     }
-  .homeicon a {
+    li.menu-item-home {
+      max-width: 4rem;
+    }
+  .menu-item-home a {
     background: url(../../img/iconmonstr-home-6.svg) 50% 50% no-repeat;
     background-size: 1rem;
   }
@@ -326,15 +329,16 @@ form.search-form {
 @media (min-width: 768px) {
   .content-area {
     float: right;
-    margin: 0 0 0 -25rem;
+    margin: 0 0 0 -20rem;
     width: 100%;
   }
   .site-main {
-    margin: 0 0 0 25rem;
+    margin: 0 0 0 20rem;
     padding-top: 2rem;
   }
   .site-content .sidebar {
     display: block;
+    float: left;
   }
 .site-content .widget-area {
     float: left;
@@ -354,18 +358,13 @@ form.search-form {
     margin-right: 0;
   }
 }
-/* * * * * * * * Cards * * * * * * * */
-
-.site-content .card {
-  height: 250px;
-  width: 100%;
-}
-.card a {
-  text-decoration: none;
-}
-.card h3 {
-  border-bottom: 1px solid #161717;
-  border-right: url(../../img/triangle-icon.png) 16 / 16px / 16px;
+@media (min-width: 1024px) {
+  .content-area {
+    margin: 0 0 0 -25rem;
+  }
+  .site-main {
+    margin: 0 0 0 25rem;
+  }
 }
 
 

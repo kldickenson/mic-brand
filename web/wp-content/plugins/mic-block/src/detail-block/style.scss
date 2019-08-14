@@ -1,0 +1,60 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+
+$summary-color:  #000;
+$summary-background-color: #bdbdbd;
+$summary-font-size: 1.25rem;
+$content-background-color: #ffffff;
+$content-border-color: #edecec;
+
+.wp-block-mic-mic-detail-block {
+	background-color: $content-background-color;
+	border-bottom: 1px solid $content-border-color;
+	border-left: 1px solid $content-border-color;
+	border-right: 1px solid $content-border-color;
+	// border-radius: 3px;
+	// margin-bottom: 3rem;
+	margin: 2rem 0 2rem;
+
+	// &[open] summary::after {
+	// 	content: "–";
+	// 	top: 6px;
+	// }
+
+
+	summary {
+		background-color: $summary-background-color;
+		border: 1px solid $summary-background-color;
+		color: $summary-color;
+		font-size: $summary-font-size;
+		font-weight: 600;
+		list-style: none;
+		padding: 1rem;
+		// margin-bottom: 2rem;
+		position: relative;
+
+		&::-webkit-details-marker {
+			display: none;
+		}
+
+		// &::after {
+		// 	content: "+";
+		// 	display: block;
+		// 	font-size: 2.25rem;
+		// 	font-weight: 600;
+		// 	position: absolute;
+		// 	top: 7px;
+		// 	right: 1rem;
+		// }
+	}
+
+	p  {
+		margin:1rem 2rem 1rem;
+	}
+	ul {
+		margin: 0 2rem 1rem;
+	}
+}

@@ -44,6 +44,10 @@ p.intro {
   margin-top: 1rem;
 }
 
+.clear {
+  clear: both;
+}
+
 /* Making sure these are scoped to the page content area */
 .site-main a {
   text-decoration: none;
@@ -66,6 +70,7 @@ p.intro {
    margin-left: 1.125rem;
 }
 figure {
+  float: left;
   width: 50%;
   margin-bottom: 4rem;
   margin-right: 2rem;
@@ -98,6 +103,10 @@ blockquote footer {
 }
 blockquote cite {
   font-style: normal;
+ font-size: .9rem;
+  font-weight: 600;
+  line-height: 0;
+  text-transform: uppercase;
 }
 
 .site-main .full-width {
@@ -122,6 +131,9 @@ blockquote cite {
   }
   .site-main .full-width p {
     width: 50%;
+  }
+  blockquote p {
+    padding: 0 10%;
   }
  }
 
