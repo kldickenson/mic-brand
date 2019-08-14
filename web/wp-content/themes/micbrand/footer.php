@@ -8,10 +8,7 @@
  *
  * @package micbrand
  */
-
 ?>
-
-	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer bg-umblue text-white p-3 pt-8">
 		<div class="container mx-auto">
@@ -41,8 +38,8 @@
 				); ?>
 			</nav>
 		  <div class="md:flex md:justify-between w-full my-8 mb-0 copyright">
-            <p class="mb-4 text-xs">&copy; 2019 <a href="http://regents.umich.edu/">Regents of the University of Michigan</a> </p>
-            <p class="mb-4 text-xs">Site produced by <a class="white no-underline hover-white" href="https://creative.umich.edu/">Michigan Creative</a>, a unit of the Vice President for Communications</p>
+            <p class="mb-4 text-xs">&copy; 2019 <a href="http://regents.umich.edu/" class="underline hover:text-ummaize">Regents of the University of Michigan</a> </p>
+            <p class="mb-4 text-xs">Site produced by <a class="underline hover:text-ummaize" href="https://creative.umich.edu/">Michigan Creative</a>, a unit of the Vice President for Communications</p>
         </div>
 		</div>
 	</footer><!-- #colophon -->

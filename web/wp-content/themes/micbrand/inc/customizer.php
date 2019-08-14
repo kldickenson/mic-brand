@@ -11,6 +11,38 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function micbrand_customize_register( $wp_customize ) {
+
+	// Add section
+	$wp_customize->add_section( 'brand_section', array(
+		'title' => __( 'Brand Homepage Settings' ),
+		'active_callback' => 'is_front_page',
+		'priority' => - 10,
+	) );
+
+	// Add settings to homepage section
+	$wp_customize->add_setting( 'micbrand_home_head', array(
+		'sanitize_callback' => 'wp_kses_post'
+	));
+	$wp_customize->add_control ('micbrand_home_head',
+		array(
+			'label' => __( 'Homepage Headline' ),
+			'section' => 'brand_section',
+			'settings' => 'micbrand_home_head',
+			'type' => 'text'
+		)
+	);
+	$wp_customize->add_setting( 'micbrand_home_text', array(
+		'sanitize_callback' => 'wp_kses_post'
+	));
+	$wp_customize->add_control ('micbrand_home_text',
+		array(
+			'label' => __( 'Homepage Text - can use basic html' ),
+			'section' => 'brand_section',
+			'settings' => 'micbrand_home_text',
+			'type' => 'textarea',
+			'multiline' => 'p',
+		)
+	);
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -50,6 +82,6 @@ function micbrand_customize_partial_blogdescription() {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function micbrand_customize_preview_js() {
-	wp_enqueue_script( 'micbrand-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+	wp_enqueue_script( 'micbrand-customizer', get_template_directory_uri() . '/js/vendor/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'micbrand_customize_preview_js' );

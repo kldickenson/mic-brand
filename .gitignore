@@ -13,6 +13,7 @@
 /web/wp-content/uploads/
 /web/wp-content/wp-cache-config.php
 /web/wp-content/plugins/hello.php
+/web/wp-content/plugins/mic-block/dist/
 
 /web/.htaccess
 /web/license.txt

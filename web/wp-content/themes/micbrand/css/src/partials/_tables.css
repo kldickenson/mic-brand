@@ -1,9 +1,26 @@
 table {
   margin: 4rem 0;
 }
-td, th {
+
+table caption {
+  /* Same styling as H5 */
+  text-transform: uppercase;
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+/* table.advgb-table-frontend td, table.advgb-table-frontend tr {
+  border: none;
+} */
+
+.wp-block-advgb-table thead tr:last-child td {
+    border-bottom: none;
+}
+table.advgb-table-frontend td,
+table.advgb-table-frontend th {
   padding: .75rem 1rem .75rem 3rem;
-  border-bottom:  1px solid #000;
+  border-bottom:  1px solid #bdbdbd;
   text-align: left;
   vertical-align: top;
 }
@@ -18,13 +35,14 @@ thead {
 }
 thead td, thead th {
   padding-left: 1rem;
-  border-bottom:  2px solid #000;
+  /* border-bottom:  2px solid #000; */
   text-align: left;
   vertical-align: bottom;
 }
-
-tbody {
+table tbody tr:first-child td {
     border-top: 2px solid #000000;
+}
+table tbody tr:last-child td {
     border-bottom: 2px solid #000000;
 }
 tbody th {
@@ -52,10 +70,40 @@ tfoot {
 
  /* * * * * * * * Table with Swatches * * * * * * * */
 table.swatches td {
-  padding-left: 1rem;
+  padding: 1rem 0 ;
+  border-bottom: 1px solid #bdbdbd;
 }
-
-
+.site-main .swatches p {
+  display: inline-block;
+}
+.swatch {
+  width: 3rem;
+  height: 3rem;
+  float: left;
+  margin-right: .5rem;
+  margin-bottom: .5rem;
+  background-color: #FFCB05;
+  border: 2px solid #FFCB05;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  padding-top: .5rem;
+}
+.maize {
+  background-color: #FFCB05;
+  border-color: #FFCB05;
+  color: #00274C;
+}
+.blue {
+  background-color: #00274C;
+  border-color: #00274C;
+  color: #FFCB05;
+}
+.white {
+  background-color: white;
+  border-color: #00274C;
+  color: #00274C;
+}
  /* * * * * * * * Zebra stipes * * * * * * * */
 table.zebra tr:nth-child(even) {
   background: white;
@@ -75,4 +123,21 @@ table.rules td {
 table.rules th:last-child,
 table.rules td:last-child {
    border-right: none;
+}
+
+ /* * * * * * * * Center TD content * * * * * * * */
+table.center td {
+    padding: .75rem 1rem .75rem 1rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+  table.advgb-table-frontend  {
+    max-width: 136%;
+  }
+  /* table.full-wide {
+    position: relative;
+    left: -20rem;
+    width: 135%
+  } */
 }

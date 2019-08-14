@@ -1,0 +1,38 @@
+/**
+ * #.# Editor Styles for Detail Block
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+.wp-block-mic-mic-detail-block {
+        box-shadow: none;
+        color: #0B111D;
+        margin: 2rem 0;
+        background: white;
+        border: 1px solid #cdcdcd;
+
+        > div {
+          padding: 1rem;
+          background: #ededed;
+          margin-bottom: .5rem;
+        }
+    // h2 {
+    //     font-size: 1.125rem;
+    //     font-weight: 700;
+    //     margin: 0;
+    //     padding: 1rem 1rem 1rem 2rem;
+    // }
+    // .p {
+    //     padding: 1rem;
+    //     background-color: $white;
+    //     box-shadow: none;
+    //     color: #0B111D;
+    //     padding: 2rem;
+    //     strong {
+    //         font-weight: 900;
+    //     }
+    //     em {
+    //         font-style: italic;
+    //     }
+    // }
+ }

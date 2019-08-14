@@ -133,13 +133,11 @@ function micbrand_widgets_init() {
 }
 add_action( 'widgets_init', 'micbrand_widgets_init' );
 
-
-
 /**
  * Enqueue scripts and styles.
  */
 function micbrand_scripts() {
-	wp_enqueue_style( 'micbrand-style', get_template_directory_uri() . '/css/dist/style.css' );
+	wp_enqueue_style( $handle='micbrand-style', $src=get_template_directory_uri() . '/css/dist/style.css', $deps=array(), $ver=null, $media='all' );
 
 	wp_enqueue_script( 'micbrand-custom-js', get_template_directory_uri() . '/js/dist/app.js', array(), '20151215', true );
 
@@ -147,11 +145,58 @@ function micbrand_scripts() {
 
 	wp_enqueue_script( 'micbrand-skip-link-focus-fix', get_template_directory_uri() . '/js/vendor/skip-link-focus-fix.js', array(), '20151215', true );
 
+	wp_enqueue_script( 'micbrand-customizer', get_template_directory_uri() . '/js/vendor/customizer.js', array( 'customize-preview' ), '20151215', true );
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'micbrand_scripts' );
+
+// Only allow blocks we need
+
+// add_filter( 'allowed_block_types', 'micbrand_allowed_block_types', 10, 2 );
+
+// function micbrand_allowed_block_types( $allowed_blocks, $post ) {
+
+// 	$allowed_blocks = array(
+// 		'core/image',
+// 		'core/paragraph',
+// 		'core/heading',
+// 		'core/list',
+// 		'core/gallery',
+// 		'core/quote',
+// 		'core/video',
+// 		'core/table',
+// 		'core/button',
+// 		'core/separator',
+// 		'core/spacer',
+// 		'mic-blocks/card-container',
+// 		'mic-blocks/card',
+// 		'mic-blocks/card-img-bottom',
+// 		'mic-blocks/detail-block',
+// 		'mic-blocks/accordion-wrapper',
+// 		'mic-blocks/accordion-item',
+// 		'core/embed',
+// 		'core/html',
+// 		'core/columns'
+// 	);
+
+// 	if( $post->post_type === 'page' ) {
+// 		$allowed_blocks[] = 'core/shortcode';
+// 	}
+
+// 	return $allowed_blocks;
+
+// }
+
+//  For converting linebreaks into separate paragraphs
+function the_textarea_value( $textarea ){
+        $lines = explode("\n", $textarea);
+        foreach( $lines as $line ){
+          echo ('<p>' . $line . '</p>');
+        }
+}
 
 /**
  * Implement the Custom Header feature.
@@ -171,7 +216,7 @@ require get_template_directory() . '/inc/template-functions.php';
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+include get_template_directory() . '/inc/customizer.php';
 
 /**
  * Load Jetpack compatibility file.

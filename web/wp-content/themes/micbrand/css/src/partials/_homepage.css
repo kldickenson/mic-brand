@@ -1,0 +1,45 @@
+/* * * * * * * * HOMEPAGE * * * * * * * */
+.home--banner {
+   background-color: #ffcb05;
+   padding: 4rem;
+   width: 100%;
+   min-height: 180px;
+}
+.home--banner h2 {
+   text-align: center;
+   color: #00274c;
+   margin-bottom: 2rem;
+}
+.homepage-bug {
+   width: 115px;
+   height: auto;
+   margin: 0 auto;
+   margin-top: -60px;
+   padding: 1rem;
+   background-color: #00274c;
+}
+.home .entry-title {
+   text-indent: -2000px;
+}
+.home .intro p {
+   margin-top: 0;
+   margin-bottom: 1.5rem;
+   padding: 0 2rem;
+   font-size: 1.125rem;
+   font-weight: normal;
+   text-align: center;
+}
+
+@media (min-width: 768px) {
+   .home .intro p {
+      padding: 0 20%;
+   }
+  .home .content-area {
+    float: none;
+    margin: 0;
+    width: 100%;
+  }
+  .home .site-main {
+    margin: 0;
+  }
+}
