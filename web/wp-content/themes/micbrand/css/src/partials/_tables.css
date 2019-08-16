@@ -51,6 +51,7 @@ tbody th {
   font-weight: normal;
 }
 tbody td, tbody th {
+  padding: .5rem 0;
   padding-left: 3rem;
   /* border-bottom-width:  1px; */
   text-align: left;
@@ -73,7 +74,7 @@ tfoot th, tfoot td {
 
  /* * * * * * * * Table with Swatches * * * * * * * */
 table.swatches td {
-  padding: 1rem 0 ;
+  padding: 1rem 0;
   border-bottom: 1px solid #bdbdbd;
 }
 table.swatches th {
@@ -146,6 +147,9 @@ table.rules td:last-child {
 table.center td {
     padding: .75rem 1rem .75rem 1rem;
     text-align: center;
+}
+table.center td:first-child {
+  text-align: left;
 }
 
 @media (min-width: 768px) {
