@@ -11,7 +11,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 
-<aside id="secondary" class="widget-area sidebar">
+<aside id="secondary" class="widget-area sidebar w-full order-1">
 <div class="sidebar-header">
 	<?php if ( 0 == $post->post_parent ) { ?>
 			<h3 class="sidebar-page-title alone"><?php echo the_title(); ?></h3>
@@ -19,9 +19,9 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 		$parents = get_ancestors( $post->ID, 'page', 'post_type' );
 		foreach( $parents as $parent ) { ?>
 			<h4 class="sidebar-parent-title"><?php echo get_the_title( $parent ); ?></h4>
-			<h3 class="sidebar-page-title"><?php echo the_title(); ?></h3>
-		<?php }
-	} ?>
+		<?php } ?>
+		<h3 class="sidebar-page-title"><?php echo the_title(); ?></h3>
+	<?php } ?>
 	</div>
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 </aside><!-- #secondary -->

@@ -34,15 +34,17 @@ thead {
   text-transform: uppercase;
 }
 thead td, thead th {
-  padding-left: 1rem;
+  padding-left: 0;
   /* border-bottom:  2px solid #000; */
   text-align: left;
   vertical-align: bottom;
 }
-table tbody tr:first-child td {
+table tbody tr:first-child td,
+table tbody tr:first-child th {
     border-top: 2px solid #000000;
 }
-table tbody tr:last-child td {
+table tbody tr:last-child td,
+table tbody tr:last-child th {
     border-bottom: 2px solid #000000;
 }
 tbody th {
@@ -56,38 +58,42 @@ tbody td, tbody th {
 }
 tbody td:first-child, tr th:first-child {
    padding-left: 1rem;
+   padding-left: 0;
 }
 
-tfoot th, tfoot td {
-  border: none;
-  padding: .5rem 1rem;
-
-}
 tfoot {
   font-size: .75rem;
   border-bottom: none;
 }
+tfoot th, tfoot td {
+  border: none;
+  padding: .5rem 1rem;
+}
+
 
  /* * * * * * * * Table with Swatches * * * * * * * */
 table.swatches td {
   padding: 1rem 0 ;
   border-bottom: 1px solid #bdbdbd;
 }
+table.swatches th {
+  padding-left: 0;
+}
 .site-main .swatches p {
   display: inline-block;
 }
 .swatch {
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
   float: left;
   margin-right: .5rem;
   margin-bottom: .5rem;
   background-color: #FFCB05;
   border: 2px solid #FFCB05;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
   text-align: center;
-  padding-top: .5rem;
+  padding-top: .125rem;
 }
 .maize {
   background-color: #FFCB05;
@@ -104,6 +110,15 @@ table.swatches td {
   border-color: #00274C;
   color: #00274C;
 }
+ /* Larger swatch size for non-mobile */
+@media (min-width: 768px) {
+  .swatch {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    padding-top: .5rem;
+  }
+}
  /* * * * * * * * Zebra stipes * * * * * * * */
 table.zebra tr:nth-child(even) {
   background: white;
@@ -114,7 +129,9 @@ table.zebra tr:nth-child(1) {
 table.zebra thead th {
   text-align: center;
 }
-
+.zebra tbody td:first-child, .zebra tr th:first-child {
+   padding-left: 1rem;
+}
  /* * * * * * * * Rules * * * * * * * */
 table.rules th,
 table.rules td {

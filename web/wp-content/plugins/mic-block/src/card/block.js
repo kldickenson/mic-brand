@@ -42,6 +42,11 @@ registerBlockType( 'mic/mic-card', {
 			source: 'text',
 			selector: '.card__body',
 		},
+		linkUrl: {
+			source: 'text',
+			selector: 'a',
+			attribute: 'html',
+		},
 		imageUrl: {
 			attribute: 'src',
 			selector: '.card__image',
@@ -78,6 +83,11 @@ registerBlockType( 'mic/mic-card', {
 					value={ attributes.title }
 					placeholder="Your card title"
 					className="heading"
+				/>
+				<PlainText
+					onChange={ content => setAttributes( { linkUrl: content } ) }
+					value={ attributes.linkUrl }
+					placeholder="Your card link URL"
 				/>
 				<RichText
 					onChange={ content => setAttributes( { body: content } ) }
@@ -129,14 +139,16 @@ registerBlockType( 'mic/mic-card', {
 			);
 		};
 		return (
-			<div className="card bg-white flex">
+			<div className="card bg-white flex w-100">
 				<div className="card__content text w-7/12 h-full">
-					<h3 className="card__title text-umblue p-4 py-6 md:text-xl">
-						{ attributes.title }
-					</h3>
-					<p className="card__body p-8 px-12 md:px-6 my-4 text-xl md:text-lg">
-						{ attributes.body }
-					</p>
+					<a href={ attributes.linkUrl }>
+						<h3 className="card__title text-umblue p-4 py-6 md:text-xl">
+							<a href={ attributes.linkUrl }>{ attributes.title }</a>
+						</h3>
+						<p className="card__body p-8 px-12 md:px-6 my-4 text-xl md:text-lg">
+							<a href={ attributes.linkUrl }>{ attributes.body }</a>
+						</p>
+					</a>
 				</div>
 				{ cardImage( attributes.imageUrl, attributes.imageAlt ) }
 			</div>

@@ -42,6 +42,11 @@ registerBlockType( 'mic/mic-card-img-bottom', {
 		// 	source: 'text',
 		// 	selector: '.card__body',
 		// },
+		linkUrl: {
+			source: 'text',
+			selector: 'a',
+			attribute: 'html',
+		},
 		imageUrl: {
 			attribute: 'src',
 			selector: '.card__image',
@@ -79,6 +84,11 @@ registerBlockType( 'mic/mic-card-img-bottom', {
 					placeholder="Your card title"
 					className="heading"
 				/>
+				<PlainText
+					onChange={ content => setAttributes( { linkUrl: content } ) }
+					value={ attributes.linkUrl }
+					placeholder="Your card link URL"
+				/>
 				{ /* <RichText
 					onChange={ content => setAttributes( { body: content } ) }
 					value={ attributes.description }
@@ -114,14 +124,20 @@ registerBlockType( 'mic/mic-card-img-bottom', {
 			}
 			// No alt set, so let's hide it from screen readers
 			return (
-				<img className="card__image w-100" src={ src } alt="" aria-hidden="true" />
+				<img
+					className="card__image w-100"
+					src={ src }
+					alt=""
+					aria-hidden="true"
+				/>
 			);
 		};
 		return (
 			<div className="card image-bottom bg-white w-100 md:w-1/3 lg:w-1/4 flex-grow mb-8 md:ml-8">
-				<h3 className="card__title text-umblue pl-4 py-6 m-0 md:text-xl">
-					{ attributes.title }
-				</h3>
+				<a href={ attributes.linkUrl }>
+					<h3 className="card__title text-umblue pl-4 py-6 m-0 md:text-xl">
+						{ attributes.title }
+					</h3></a>
 				{ cardImage( attributes.imageUrl, attributes.imageAlt ) }
 			</div>
 		);
