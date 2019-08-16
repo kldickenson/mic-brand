@@ -111,8 +111,11 @@ blockquote cite {
 
 .site-main .full-width {
   margin-left: 0;
-  margin-top: 4rem;
   width: 100%;
+}
+h3.full-width {
+    margin-top: 4rem;
+
 }
 
 @media (min-width: 768px) {
@@ -129,8 +132,14 @@ blockquote cite {
     width: 130%;
     clear: both;
   }
-  .site-main .full-width p {
-    width: 50%;
+  .site-main h3.full-width,
+  .site-main h4.full-width,
+  .site-main h5.full-width,
+  .site-main p.full-width {
+    width: 70%;
+  }
+  blockquote p {
+    padding: 0 10%;
   }
   blockquote p {
     padding: 0 10%;

@@ -323,8 +323,9 @@ form.search-form {
 /* * * * * * * * content #primary.content-area * * * * * * * */
 /* hiding sidebar in mobile (base)  */
 .site-content .sidebar {
-  display: none;
+  /* display: none; */
 }
+
 /* showing left-hand sidebar */
 @media (min-width: 768px) {
   .content-area {
@@ -370,10 +371,45 @@ form.search-form {
 
 /* * * * * * * * content aside#secondary.widget-area * * * * * * * */
 /* styling of left-hand sidebar and sidebar menu */
+
+/* Hiding the page title because it is included in the sidebar menu */
+.site-main .entry-title {
+  text-indent: -5000px;
+}
+.site-content aside {
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid green;
+}
+.sidebar-parent-title {
+  display: none;
+}
+.sidebar-page-title {
+  color: #ffcb05;
+  font-size: 2.25rem;
+  font-weight: 800;
+}
+.advanced-sidebar-menu {
+  padding-left: 1rem;
+}
+.current_page_item a {
+  font-weight: 500;
+}
+.children {
+  margin-left: 1rem;
+}
+.children li {
+  border: none;
+}
+
 @media (min-width: 768px) {
+
   .site-content aside {
     position: relative;
     padding-right: 2rem;
+    padding-bottom: 0;
+    border-bottom: none;
+    margin-top: 0;
     margin-bottom: 4rem;
   }
   .sidebar-header {
@@ -381,6 +417,7 @@ form.search-form {
     padding: 1.5rem 1rem 2rem;
   }
   .sidebar-parent-title {
+    display: block;
     line-height: 2;
     margin-bottom: .5rem;
     text-transform: uppercase;
@@ -398,6 +435,9 @@ form.search-form {
   .sidebar-page-title.alone {
     padding-top: 1rem
   }
+  .advanced-sidebar-menu {
+    padding-left: 0;
+  }
   .child-sidebar-menu {
     padding-top: 26px;
     background: url(../../img/triangle-icon.png) 1rem top no-repeat;
@@ -409,12 +449,34 @@ form.search-form {
     padding: .5rem 1rem;
     font-weight: 700;
   }
-  .child-sidebar-menu li.current_page_item {
+
+  /* Current Page */
+  .child-sidebar-menu .current_page_item > a {
     background-color: #00274c;
     color: white;
   }
-  .child-sidebar-menu li:hover a,
-  .child-sidebar-menu li:focus a {
+  /* Parent / Grandparent */
+  .child-sidebar-menu .current_page_ancestor > a {
+    background-color:rgba(0, 39, 76, .25);
+    color: black;
+  }
+  /* Grandchild */
+  .children {
+    display: block;
+    font-size: 100%;
+    margin-left: 0;
+  }
+  .children a {
+     padding-left: 2rem;
+    color: black;
+  }
+  /* grandchild of active menu item */
+ .current_page_item .children a {
+    background-color:rgba(0, 39, 76, .25);
+  }
+  /* All - hover */
+  .child-sidebar-menu a:hover,
+  .child-sidebar-menu a:focus {
     background-color:#ffcb05;
     color:black;
   }
@@ -422,11 +484,11 @@ form.search-form {
 
 /* * * * * * * * site-content content-area site-main * * * * * * * */
 /* hiding title since in sidebar menu  */
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .site-main .entry-title {
-    text-indent: -2000px;
+    text-indent: -5000px;
   }
-}
+} */
 
 /* * * * * * * end of BRAND specific CSS * * * * * * * */
 /* purgecss end ignore */

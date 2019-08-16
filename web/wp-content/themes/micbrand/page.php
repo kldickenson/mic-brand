@@ -14,8 +14,8 @@
 
 get_header();
 ?>
-<div id="content" class="site-content container mx-auto px-4 pt-2">
-	<div id="primary" class="content-area ">
+<div id="content" class="site-content container mx-auto px-4 pt-2 flex flex-wrap md:flex-none">
+	<div id="primary" class="content-area w-full order-2 ">
 		<main id="main" class="site-main">
 
 		<?php
