@@ -1,0 +1,114 @@
+/* * * * * * * * content aside#secondary.widget-area * * * * * * * */
+/* styling of left-hand sidebar and sidebar menu */
+
+/* Hiding the page title because it is included in the sidebar menu */
+.site-main .entry-title {
+  text-indent: -5000px;
+}
+.site-content .sidebar {
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid green;
+  /* z-index: 10; */
+}
+.sidebar-parent-title {
+  display: none;
+}
+.sidebar-page-title {
+  color: #ffcb05;
+  font-size: 2.25rem;
+  font-weight: 800;
+}
+.advanced-sidebar-menu {
+  padding-left: 1rem;
+}
+.current_page_item > a {
+  font-weight: 500;
+}
+.children {
+  margin-left: 1rem;
+}
+.children > li {
+  border: none;
+}
+
+@media (min-width: 768px) {
+
+  .site-content .sidebar {
+    position: relative;
+    padding-right: 2rem;
+    padding-bottom: 0;
+    border-bottom: none;
+    margin-top: 0;
+    margin-bottom: 4rem;
+    border-bottom: 0;
+  }
+  .sidebar-header {
+    background-color:#ffcb05;
+    padding: 1.5rem 1rem 2rem;
+  }
+  .sidebar-parent-title {
+    display: block;
+    line-height: 2;
+    margin-bottom: .5rem;
+    text-transform: uppercase;
+    color: #00274c;
+    font-size: .90rem;
+    font-weight: 900;
+    }
+  .sidebar-page-title {
+    font-size: 1.5rem;
+    line-height: .95;
+    font-weight:900;
+    text-transform: uppercase;
+    color: #00274c;
+  }
+  .sidebar-page-title.alone {
+    padding-top: 1rem
+  }
+  .advanced-sidebar-menu {
+    padding-left: 0;
+  }
+  .child-sidebar-menu {
+    padding-top: 26px;
+    background: url(../../img/triangle-icon.png) 1rem top no-repeat;
+    padding-bottom: 0.5rem;
+    background-color: white;
+  }
+  .child-sidebar-menu a {
+    display: block;
+    padding: .5rem 1rem;
+    font-weight: 700;
+  }
+
+  /* Current Page */
+  .child-sidebar-menu .current_page_item > a {
+    background-color: #00274c;
+    color: white;
+  }
+  /* Parent / Grandparent */
+  .child-sidebar-menu .current_page_ancestor > a {
+    background-color:rgba(0, 39, 76, .25);
+    color: black;
+  }
+  /* Grandchild */
+  .children {
+    display: block;
+    font-size: 100%;
+    margin-left: 0;
+  }
+  .children a {
+     padding-left: 2rem;
+    color: black;
+  }
+  /* grandchild of active menu item */
+ .current_page_item .children a {
+    background-color:rgba(0, 39, 76, .25);
+  }
+  /* All - hover */
+  .child-sidebar-menu a:hover,
+  .child-sidebar-menu a:focus {
+    background-color:#ffcb05;
+    color:black;
+  }
+}

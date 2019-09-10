@@ -2,9 +2,9 @@
    /* .card-container {
       display: flex;
       flex-wrap: wrap;
-   }
+   } */
 
-   .card {
+   /* .card {
       margin-bottom: 4rem;
       height: 250px;
    }
@@ -33,7 +33,7 @@
    .card img {
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 50px, 20px 30px, 0 10px);
       object-fit: cover;
-   } */
+   }
 
    .image-bottom {
       margin-left: 2rem;
@@ -51,4 +51,4 @@
    }
    @media (min-width: 768px) {
 
-   }
+   } */

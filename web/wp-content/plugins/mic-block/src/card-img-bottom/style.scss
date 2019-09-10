@@ -5,6 +5,9 @@
  */
 
 .wp-block-cgb-block-mic-block  {
+   margin-left: 2rem;
+   margin-bottom: 2rem;
+   height: 200px;
   background: $red;
   border: 0.2rem solid $black;
   color: $black;
@@ -12,16 +15,34 @@
   max-width: 740px;
   padding: 2rem;
 
-    .image-bottom {
-    /* margin-left: 2rem;
-    margin-bottom: 2rem; */
-    height: 200px;
-   }
-   .image-bottom h3 {
+
+   h3 {
       border: none;
       font-size: 1.125rem;
+      &:after {
+         padding-left: 0.5rem;
+         content: url(/wp-content/themes/micbrand/img/arrow-alt-circle-right-solid-sm.svg);
+         width: auto;
+         height: 1rem;
+      }
    }
-   .image-bottom img {
+   p:after {
+      padding-left: 0.5rem;
+      content: ">";
+      color: #024794;
+      font-weight: 700;
+   }
+   p {
+         a {
+         text-decoration: none;
+         color: inherit;
+
+         &:hover {
+            text-decoration: none;
+         }
+      }
+   }
+     img {
       clip-path: polygon(0 0, 20px 0, 40px 20px, 60px 0, 100% 0, 100% 100%, 0 100%);
       object-fit: contain;
 

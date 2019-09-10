@@ -12,11 +12,12 @@
   background: rgba(0,0,0,.1);
    border: 1px solid gray;
    padding: 0 1rem 1rem;
+   display: flex;
+   flex-wrap: wrap;
 
    h4 {
       color: gray;
       font-style: italic;
-
    }
 
 }
