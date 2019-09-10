@@ -7,10 +7,6 @@
    /* * * * CLOSED = default styling * * * */
    .accordion summary {
       cursor: pointer;
-      font-weight: 700;
-      line-height: 1;
-      text-transform: uppercase;
-      text-decoration: none;
 
    }
    .accordion summary:hover {
