@@ -70,10 +70,10 @@ p.intro {
    margin-left: 1.125rem;
 }
 figure {
-  float: left;
-  width: 50%;
   margin-bottom: 4rem;
   margin-right: 2rem;
+  float: left;
+  width: 50%;
 }
 figure img {
   margin-top: .375rem;

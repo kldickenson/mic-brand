@@ -2,7 +2,7 @@
     wpBlockEditor = wp.blockEditor || wp.editor;
     const { __ } = wpI18n;
     const { Component, Fragment } = wpElement;
-    const { registerBlockType } = wpBlocks;
+    const { registerBlockType, createBlock } = wpBlocks;
     const { InspectorControls, RichText, PanelColorSettings, InnerBlocks } = wpBlockEditor;
     const { RangeControl, PanelBody, BaseControl , SelectControl, ToggleControl } = wpComponents;
 
@@ -82,7 +82,7 @@
         }
 
         render() {
-            const { isSelected, attributes, setAttributes } = this.props;
+            const { attributes, setAttributes } = this.props;
             const {
                 header,
                 headerBgColor,
@@ -102,6 +102,14 @@
             return (
                 <Fragment>
                     <InspectorControls>
+                        <PanelBody title={ __( 'Notice' ) }>
+                            <p style={ { color: '#ff0000', fontStyle: 'italic' } }>
+                                { __( `This accordion block has been replaced by a new and better one.
+                                 This block will be removed in a future version.
+                                 Please transform this to an Accordion Item block
+                                 and drag them into new Adv. Accordion block as soon as possible.` ) }
+                            </p>
+                        </PanelBody>
                         <PanelBody title={ __( 'Accordion Settings' ) }>
                             <RangeControl
                                 label={ __( 'Bottom spacing' ) }
@@ -329,6 +337,9 @@
         category: 'advgb-category',
         keywords: [ __( 'accordion' ), __( 'list' ), __( 'faq' ) ],
         attributes: accordionAttrs,
+        supports: {
+            inserter: false,
+        },
         edit: AdvAccordion,
         save: function ( { attributes } ) {
             const {
@@ -380,6 +391,27 @@
                     </div>
                 </div>
             );
+        },
+        transforms: {
+            to: [
+                {
+                    type: 'block',
+                    blocks: [ 'advgb/accordions' ],
+                    transform: ( attributes, innerBlocks ) => {
+                        const accordion = createBlock(
+                            'advgb/accordion-item',
+                            { ...attributes, changed: false },
+                            innerBlocks,
+                        );
+
+                        return createBlock(
+                            'advgb/accordions',
+                            { ...attributes, header: undefined, needUpdate: false },
+                            [ accordion ],
+                        )
+                    }
+                }
+            ]
         },
     } );
 })( wp.i18n, wp.blocks, wp.element, wp.blockEditor, wp.components );
