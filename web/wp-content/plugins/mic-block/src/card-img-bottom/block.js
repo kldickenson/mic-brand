@@ -47,7 +47,7 @@ registerBlockType( 'mic/mic-card-img-bottom', {
 		imageUrl: {
 			source: 'attribute',
 			attribute: 'src',
-			selector: 'img',
+			selector: '.card__image img',
 		},
 		imageAlt: {
 			source: 'attribute',
@@ -62,7 +62,7 @@ registerBlockType( 'mic/mic-card-img-bottom', {
 		};
 
 		return (
-			<div className="card image-bottom bg-white w-100 md:w-1/3 lg:w-1/4 flex-grow mb-8 md:ml-8">
+			<div className={ `${ className } card image-bottom bg-white w-100 md:w-1/3 lg:w-1/4 flex-grow mb-8 md:ml-8` }>
 				<h3 className="card__title text-umblue pl-4 py-6 m-0 md:text-xl">
 					<PlainText
 						onChange={ content => setAttributes( { title: content } ) }
@@ -71,12 +71,10 @@ registerBlockType( 'mic/mic-card-img-bottom', {
 						className="heading"
 					/>
 				</h3>
-				<PlainText
-					onChange={ content => setAttributes( { linkUrl: content } ) }
-					value={ attributes.linkUrl }
-					placeholder="URL for card to link to"
-				/>
-				<img src={ attributes.imageUrl } alt="" />
+
+				<figure className="card__image">
+					<img src={ attributes.imageUrl } alt={ attributes.imageAlt } />
+				</figure>
 				<MediaUploadCheck>
 					<MediaUpload
 						onSelect={ onImageSelect }
@@ -89,12 +87,21 @@ registerBlockType( 'mic/mic-card-img-bottom', {
 						) }
 					/>
 				</MediaUploadCheck>
+				<div className="card__url">
+					<p>Card links to</p>
+					<PlainText
+						onChange={ content => setAttributes( { linkUrl: content } ) }
+						value={ attributes.linkUrl }
+						placeholder="URL for card to link to"
+					/>
+				</div>
 			</div>
 		);
 	},
-	save( { attributes } ) {
+	save( { attributes, className } ) {
 		return (
-			<div className="card image-bottom">
+			<div
+				className={ `${ className } card image-bottom bg-white w-100 md:w-1/3 lg:w-1/4 flex-grow mb-8 md:ml-8` }>
 				<a href={ attributes.linkUrl }>
 					<h3 className="card__title">{ attributes.title }</h3>
 				</a>

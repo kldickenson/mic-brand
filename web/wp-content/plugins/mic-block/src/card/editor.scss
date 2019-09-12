@@ -6,36 +6,40 @@
  */
 
 .wp-block-mic-mic-card  {
-  background-color: white !important;
-  border: 2px solid gray !important;
-  color: gray;
-  margin: 0 auto;
-  max-width: 95%;
-  padding: 2rem;
-  height: inherit;
+  border: 2px solid gray;
+  margin-bottom: 1rem;
+  width: 100%;
+  height: auto;
 
-  // textarea:first-child {
-  //   background: gray;
-  //   color: black;
-  //   border: 1px solid gray;
-  //   padding: .5rem;
-  // }
-  .card__title {
-    textarea {
-      width: 95%;
-      &:after {
-          padding-left: 0.5rem;
-          content: url(/wp-content/themes/micbrand/img/arrow-alt-circle-right-solid-sm.svg);
-          width: auto;
-          height: 1rem;
-      }
-    }
+
+  PlainText, RichText {
+    width: 100%;
   }
-  .url {
+
+  .card__title {
+    // padding: 0;
+
+    &:after {
+      display: none;
+    }
+    // textarea {
+    //   display: inline-block;
+    // }
+  }
+
+  .card__url {
     color: blue;
     border: 1px solid blue;
     padding: .25rem;
-    font-size: 85%
+    font-size: 85%;
+    margin-bottom: .5rem;
+  }
+  .card__image {
+    margin-bottom: .5rem;
+
   }
 
+  .button {
+    margin-top: .5rem;
+  }
 }

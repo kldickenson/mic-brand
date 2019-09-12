@@ -9,7 +9,7 @@
 import './style.scss';
 import './editor.scss';
 
-const { RichText, MediaUpload, PlainText } = wp.editor;
+const { RichText, MediaUpload, MediaUploadCheck, PlainText } = wp.editor;
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
 const { Button } = wp.components;
@@ -33,150 +33,112 @@ registerBlockType( 'mic/mic-card', {
 	icon: 'index-card', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: 'mic-blocks', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	attributes: {
-		cardTitle: {
+		title: {
+			type: 'string',
 			source: 'text',
 			selector: '.card__title',
 		},
-		cardBody: {
-			type: 'array',
+		bodyText: {
+			type: 'string',
 			source: 'text',
 			selector: '.card__body',
 		},
-		cardLinkUrl: {
-			source: 'text',
+		linkUrl: {
+			type: 'string',
+			source: 'attribute',
 			selector: 'a',
-			attribute: 'html',
+			attribute: 'href',
 		},
-		cardImageUrl: {
+		imageUrl: {
+			source: 'attribute',
 			attribute: 'src',
-			selector: '.card__image',
+			selector: '.card__image img',
 		},
-		cardImageAlt: {
-			attributes: 'alt',
-			selector: '.card__image',
+		imageAlt: {
+			source: 'attribute',
+			attribute: 'alt',
+			selector: '.card__image img',
 		},
 	},
 	edit( { attributes, className, setAttributes } ) {
-		const onChangeCardTitle = newCardTitle => {
-			setAttributes( { cardTitle: newCardTitle } );
-		};
-
-		const onChangeCardLinkUrl = newCardLinkUrl => {
-			setAttributes( { cardLinkUrl: newCardLinkUrl } );
-		};
-
-		const onChangeCardBody = newCardBody => {
-			setAttributes( { cardBody: newCardBody } );
-		};
-
-		const getImageButton = openEvent => {
-			if ( attributes.imageUrl ) {
-				return (
-					<img
-						src={ attributes.imageUrl }
-						onClick={ openEvent }
-						className="image"
-					/>
-				);
-			}
-			return (
-				<div className="button-container">
-					<Button onClick={ openEvent } className="button button-large">
-						Pick an image
-					</Button>
-				</div>
-			);
+		const onImageSelect = imageObject => {
+			console.info( imageObject );
+			setAttributes( {
+				imageUrl: imageObject.sizes.full.url,
+				imageAlt: imageObject.alt,
+			} );
 		};
 
 		return (
-			<div className={ className }>
-				<div className="url">
-					<PlainText
-						onChange={ onChangeCardLinkUrl }
-						value={ attributes.cardLinkUrl }
-						placeholder="Your card link URL"
-					/>
-				</div>
-				<div className="card bg-white flex w-100">
-					<div className="card__content text w-7/12 h-full">
-						<h3 className="card__title text-umblue p-4 py-6 md:text-xl">
-							<PlainText
-								onChange={ onChangeCardTitle }
-								value={ attributes.cardTitle }
-								placeholder="Your card title"
-								className="heading"
-							/>
-						</h3>
-						<p className="card__body p-8 px-12 md:px-6 my-4 text-xl md:text-lg">
-							<RichText
-								onChange={ onChangeCardBody }
-								value={ attributes.cardBody }
-								placeholder="Your card text"
-							/>
-						</p>
+			<div className={ `${ className } card bg-white flex w-100` }>
+				<div className="card__content text w-7/12 h-full">
+					<h3 className="card__title text-umblue pl-4 py-6 m-0 md:text-xl">
+						<PlainText
+							onChange={ content => setAttributes( { title: content } ) }
+							value={ attributes.title }
+							placeholder="Your card title"
+							className="heading"
+						/>
+					</h3>
+					<p className="card__body p-8 px-12 md:px-6 my-4 text-xl md:text-lg">
+						<PlainText
+							onChange={ content =>
+								setAttributes( { bodyText: content } )
+							}
+							value={ attributes.bodyText }
+							placeholder="Your card text"
+						/>
+					</p>
+					<div className="card__url">
+						<p>Card links to</p>
+						<PlainText
+							onChange={ content => setAttributes( { linkUrl: content } ) }
+							value={ attributes.linkUrl }
+							placeholder="URL for card to link to"
+						/>
 					</div>
-					<div
-						className="card__image w-5/12 h-auto"
-						src="#"
-						alt="{ alt }"
-					/>
-					<MediaUpload
-						onSelect={ media => {
-							setAttributes( {
-								imageAlt: media.alt,
-								imageUrl: media.url,
-							} );
-						} }
-						type="image"
-						value={ attributes.imageID }
-						render={ ( { open } ) => getImageButton( open ) }
-					/>
+				</div>
+				<div className="w-5/12 h-auto">
+					<figure className="card__image">
+						<img src={ attributes.imageUrl } alt={ attributes.imageAlt } />
+					</figure>
+					<MediaUploadCheck>
+						<MediaUpload
+							onSelect={ onImageSelect }
+							type="image"
+							value={ attributes.imageUrl }
+							render={ ( { open } ) => (
+								<Button
+									onClick={ open }
+									className="button button-large">
+									Open Media Library
+								</Button>
+							) }
+						/>
+					</MediaUploadCheck>
 				</div>
 			</div>
 		);
 	},
-	save( { attributes } ) {
-		const cardImage = ( src, alt ) => {
-			if ( ! src ) {
-				return (
-					<img
-						className="card__image"
-						src="http://fpoimg.com/364x250"
-						alt=""
-					/>
-				);
-			}
-			if ( alt ) {
-				return (
-					<img className="card__image" src={ src } alt={ alt } />
-				);
-			}
-			// No alt set, so let's hide it from screen readers
-			return (
-				<img
-					className="card__image"
-					src={ src }
-					alt=""
-					ariaHidden="true"
-				/>
-			);
-		};
+	save( { attributes, className } ) {
 		return (
-			<div className="card bg-white flex w-100">
+			<div className={ `${ className } card bg-white flex w-100` }>
 				<div className="card__content text w-7/12 h-full">
-					<h3 className="card__title text-umblue p-4 py-6 md:text-xl">
-						<a href={ attributes.cardLinkUrl }>
-							<RichText.Content value={ attributes.cardTitle } />
-						</a>
-					</h3>
+					<a href={ attributes.linkUrl }>
+						<h3 className="card__title text-umblue p-4 py-6 md:text-xl">
+							{ attributes.title }
+						</h3>
+					</a>
 					<p className="card__body p-8 px-12 md:px-6 my-4 text-xl md:text-lg">
 						<a href={ attributes.linkUrl }>
-							<RichText.Content value={ attributes.cardBody } />
+							{ attributes.bodyText }
 						</a>
 					</p>
 				</div>
 				<div className="w-5/12 h-auto">
-					{ cardImage( attributes.cardImageUrl, attributes.cardImageAlt ) }
+					<figure className="card__image">
+						<img src={ attributes.imageUrl } alt={ attributes.imageAlt } />
+					</figure>
 				</div>
 			</div>
 		);
