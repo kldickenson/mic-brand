@@ -10,20 +10,23 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
+
 function micbrand_customize_register( $wp_customize ) {
 
 	// Add section
 	$wp_customize->add_section( 'brand_section', array(
-		'title' => __( 'Brand Homepage Settings' ),
+		'title' => __( 'Brand Homepage Settings', 'micbrand' ),
 		'active_callback' => 'is_front_page',
-		'priority' => - 10,
+		'priority' => - 10
 	) );
 
 	// Add settings to homepage section
+
+	// Adding heading tagline
 	$wp_customize->add_setting( 'micbrand_home_head', array(
 		'sanitize_callback' => 'wp_kses_post'
 	));
-	$wp_customize->add_control ('micbrand_home_head',
+	$wp_customize->add_control( 'micbrand_home_head',
 		array(
 			'label' => __( 'Homepage Headline' ),
 			'section' => 'brand_section',
@@ -31,10 +34,12 @@ function micbrand_customize_register( $wp_customize ) {
 			'type' => 'text'
 		)
 	);
+
+	// Adding homepage copy
 	$wp_customize->add_setting( 'micbrand_home_text', array(
 		'sanitize_callback' => 'wp_kses_post'
 	));
-	$wp_customize->add_control ('micbrand_home_text',
+	$wp_customize->add_control( 'micbrand_home_text',
 		array(
 			'label' => __( 'Homepage Text - can use basic html' ),
 			'section' => 'brand_section',

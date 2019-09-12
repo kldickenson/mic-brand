@@ -1617,7 +1617,8 @@ class wpdb {
 			if ( $this->dbh->connect_errno ) {
 				$this->dbh = null;
 
-				/** It's possible ext/mysqli is misconfigured. Fall back to ext/mysql if:
+				/*
+				 * It's possible ext/mysqli is misconfigured. Fall back to ext/mysql if:
 				  *  - We haven't previously connected, and
 				  *  - WP_USE_EXT_MYSQL isn't set to false, and
 				  *  - ext/mysql is loaded.

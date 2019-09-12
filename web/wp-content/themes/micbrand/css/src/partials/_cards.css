@@ -7,11 +7,13 @@
    .card {
       margin-bottom: 4rem;
       height: 250px;
+      background: white;
    }
-   .card h3 {
+  .card__title {
+      padding: 1.25rem 1.25rem 0 1.25rem;
       border-bottom: 1px solid rgba(0,0,0,.1);
    }
-   .card h3:after {
+   .card__title:after {
       padding-left: 0.5rem;
       content: url(../../img/arrow-alt-circle-right-solid-sm.svg);
       width: auto;
@@ -30,24 +32,22 @@
    .card a:hover {
       text-decoration: none;
    }
-   .card img {
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 50px, 20px 30px, 0 10px);
-      object-fit: cover;
-   }
 
-   .image-bottom {
-      /* margin-left: 2rem;
-      margin-bottom: 2rem; */
-      height: 200px;
-   }
-   .image-bottom h3 {
-      border: none;
-      font-size: 1.125rem;
-   }
-   .image-bottom img {
-      clip-path: polygon(0 0, 20px 0, 40px 20px, 60px 0, 100% 0, 100% 100%, 0 100%);
-      object-fit: contain;
 
+   /* Custom image placement for Homepage cards */
+   .logos img {
+     object-position: 85% 50% !important;
+   }
+   /* .design img {
+   } */
+   .editorial img {
+     object-position: 40% 75% !important;
+   }
+   .campus img {
+     object-position: 45% 60% !important;
+   }
+   .trademark img {
+     object-position: 0 70% !important;
    }
    @media (min-width: 768px) {
 

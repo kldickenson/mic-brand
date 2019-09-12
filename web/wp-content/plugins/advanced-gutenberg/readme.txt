@@ -2,8 +2,8 @@
 Contributors: JoomUnited
 Tags: gutenberg, gutenberg blocks, advanced gutenberg, editor, blocks
 Requires at least: 5.0
-Tested up to: 5.2.2
-Stable tag: 2.0.7
+Tested up to: 5.2.3
+Stable tag: 2.1.2
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -25,7 +25,7 @@ Advanced Gutenberg adds the missing blocks and configuration you need to build p
 - Define Gutenberg editor size and column materialization
 
 
-## ADVANCED GUTENBERG SPECIAL BLOCKS
+## ADVANCED GUTENBERG BLOCKS
 
 - Column manager with pre-defined layouts
 - Latest post slider and latest post slider
@@ -40,6 +40,8 @@ Advanced Gutenberg adds the missing blocks and configuration you need to build p
 - Testimonial block: define avatar, title, text, colors, slider
 - Contact Form block: get email and export contact form data
 - Email Opt-In block: get email and export data
+- WordPress login block
+- WordPress register block
 - Counter block: display numbers in a dynamic, fun and engaging way
 - Advanced Image block: hover text, overlay, colors, link and more
 - Advanced Image block: load and display local and remote video
@@ -136,6 +138,21 @@ The Advanced Gutenberg Custom CSS can be created from the plugin configuration a
 1. Latest posts and WooCommerce products blocks
 
 == Changelog ==
+
+= 2.1.3 =
+ * Fix : Count Up block: br tag is shown as text on front-end
+ * Fix : Count Up block: check counter type to avoid render NaN
+
+= 2.1.1 =
+ * Fix : Error on login block with Gutenberg core
+
+= 2.1.0 =
+ * Add : Login/Register Form block: Easy to create login and register form
+ * Add : New Search bar block: Create a search bar block
+ * Add : New Accordions Wrapper block: group accordions elements
+ * Add : Adv Button block: add predefined styles and hover opacity
+ * Fix : Adv Table block: block error on headers in some cases
+ * Fix : Cannot verify newsletter form captcha
 
 = 2.0.7 =
  * Fix : Some blocks missing styles when using as Reusable blocks

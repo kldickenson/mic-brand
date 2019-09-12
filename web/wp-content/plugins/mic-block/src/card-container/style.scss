@@ -4,3 +4,10 @@
  * CSS for both Frontend+Backend.
  */
 
+.wp-block-mic-container {
+  background: transparent;
+   border: none;
+   padding: 0;
+   display: flex;
+   flex-wrap: wrap;
+}

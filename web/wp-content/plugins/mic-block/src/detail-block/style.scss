@@ -19,36 +19,33 @@ $content-border-color: #edecec;
 	// margin-bottom: 3rem;
 	margin: 2rem 0 2rem;
 
-	// &[open] summary::after {
-	// 	content: "–";
-	// 	top: 6px;
-	// }
-
-
+	details {
+		text-align: left;
+      width: 100%;
+      margin: 1rem 0;
+	}
 	summary {
 		background-color: $summary-background-color;
 		border: 1px solid $summary-background-color;
 		color: $summary-color;
 		font-size: $summary-font-size;
-		font-weight: 600;
-		list-style: none;
+		font-weight: 700;
+		line-height: 1;
+      text-transform: uppercase;
 		padding: 1rem;
-		// margin-bottom: 2rem;
 		position: relative;
 
 		&::-webkit-details-marker {
 			display: none;
 		}
 
-		// &::after {
-		// 	content: "+";
-		// 	display: block;
-		// 	font-size: 2.25rem;
-		// 	font-weight: 600;
-		// 	position: absolute;
-		// 	top: 7px;
-		// 	right: 1rem;
-		// }
+		&::after {
+			content: url(//wp-content/themes/micbrand/img/add-solid.svg);
+			float: right;
+			padding-left: 1rem;
+			width: 1.25rem;
+			height: auto;
+   	}
 	}
 
 	p  {
@@ -57,4 +54,5 @@ $content-border-color: #edecec;
 	ul {
 		margin: 0 2rem 1rem;
 	}
+
 }

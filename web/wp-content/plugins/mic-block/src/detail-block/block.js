@@ -68,11 +68,23 @@ registerBlockType( 'mic/mic-detail-block', {
 		};
 
 		return (
-			<div className={ className }>
-				<RichText tagName="h2" onChange={ onChangeHeading } value={ heading } />
-				<RichText tagName="p" onChange={ onChangeContent } value={ content } />
-				<InnerBlocks allowedBlocks={ [ 'core/paragraph', 'core/list' ] } />
-			</div>
+			<details className={ className } open>
+				<summary>
+					<RichText
+						tagName="h2"
+						onChange={ onChangeHeading }
+						value={ heading }
+					/>
+				</summary>
+				<RichText
+					tagName="p"
+					onChange={ onChangeContent }
+					value={ content }
+				/>
+				<InnerBlocks
+					allowedBlocks={ [ 'core/paragraph', 'core/list' ] }
+				/>
+			</details>
 		);
 	},
 

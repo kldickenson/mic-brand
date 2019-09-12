@@ -5,11 +5,40 @@
  * which makes it higher in priority.
  */
 
-.wp-block-mic-mic-card  {
-  background: $green;
-  border: 0.2rem solid $black;
-  color: $black;
-  margin: 0 auto;
-  max-width: 740px;
-  padding: 2rem;
+.wp-block-mic-mic-card-img-bottom  {
+  border: 0.1rem solid gray;
+  height: auto;
+
+  .card__title {
+    padding: 0;
+
+    &:after {
+      // display: none;
+    }
+    textarea {
+      display: inline-block;
+      // height: auto;
+      // width: 50%;
+    }
+  }
+  .card__url {
+    color: blue;
+    border: 1px solid blue;
+    padding: .25rem;
+    // font-size: 85%;
+    margin-top: .5rem;
+   p {
+     margin: 0;
+     padding: 0;
+   }
+
+  }
+  .card__image {
+    margin-bottom: .5rem;
+  }
+
+  .button {
+    margin-top: .5rem;
+  }
+
 }

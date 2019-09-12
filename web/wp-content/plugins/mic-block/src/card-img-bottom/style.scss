@@ -4,11 +4,40 @@
  * CSS for both Frontend+Backend.
  */
 
-.wp-block-cgb-block-mic-block  {
-  background: $red;
-  border: 0.2rem solid $black;
-  color: $black;
-  margin: 0 auto;
-  max-width: 740px;
-  padding: 2rem;
+.wp-block-mic-mic-card-img-bottom  {
+   margin-left: 2rem;
+   margin-bottom: 2rem;
+   height: 200px;
+
+
+  .card__title {
+    // border-bottom: 1px solid rgba(0,0,0,.1);
+      padding: 1.25rem 1.25rem 0 1.25rem;
+      border-bottom: 0;
+      font-size: 1.125rem;
+
+    &:after {
+      padding-left: 0.5rem;
+      content: url(/wp-content/themes/micbrand/img/arrow-alt-circle-right-solid-sm.svg);
+      width: auto;
+      height: 1rem;
+    }
+  }
+
+ .card__image {
+    float: none;
+    margin:0;
+    padding: 0;
+    width: 100%;
+    height: 200px;
+    clip-path: polygon(0 0, 20px 0, 40px 20px, 60px 0, 100% 0, 100% 200px, 0 200px);
+    background: gray 50% 50% no-repeat;
+
+    img {
+      width: 100%;
+      object-fit: none;
+      object-position: 50% 50%;
+    }
+  }
+
 }
