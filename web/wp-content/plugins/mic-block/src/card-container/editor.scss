@@ -5,12 +5,19 @@
  * which makes it higher in priority.
  */
 
-.wp-block-mic-cards-container  {
-  background: rgba(0,0,0,.1);
-  border: 0.2rem solid blue;
-  color: $black;
-  margin: 0 auto;
-  max-width: 740px;
-  padding: 0 2rem;
-}
 
+.wp-block-mic-container {
+  max-width: 740px;
+   margin: 0 auto;
+  background: rgba(0,0,0,.1);
+   border: 1px solid gray;
+   padding: 0 1rem 1rem;
+   display: flex;
+   flex-wrap: wrap;
+
+   h4 {
+      color: gray;
+      font-style: italic;
+   }
+
+}

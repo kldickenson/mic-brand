@@ -31,17 +31,17 @@
 					<span class="hamburger-inner"></span>
 				</span>
 			</button>
-			<div class="logo inline-block p-3 md:p-5 text-center md:pb-0 md:m-0 md:w-1/2 md:text-left"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="/wp-content/themes/micbrand/img/VPComm_Logo_header.svg" alt="Vice President for Communications, University of Michigan" class="logo-image mx-auto md:m-0" /></a></div>
-			<div class="site-branding py-2 mx-auto md:text-right md:m-0 md:mr-5 md:p-0">
+			<div class="logo inline-block p-3 lg:p-5 lg:pb-0 lg:m-0 lg:w-1/2"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="/wp-content/themes/micbrand/img/VPComm_Logo_header.svg" alt="Vice President for Communications, University of Michigan" class="logo-image" /></a></div>
+			<div class="site-branding py-2 mx-auto lg:text-right lg:m-0 lg:mr-5 lg:p-0">
 				<?php
 				if ( is_front_page() && is_home() ) :
 					?>
-					<h1 class="site-title p-0 mt-4 text-2xl font-bold antialiased uppercase text-ummaize text-center md:text-right"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<h1 class="site-title p-0 mt-4 text-2xl font-bold antialiased uppercase text-ummaize text-center lg:text-right"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 					<?php else : ?>
-					<p class="site-title p-0 mt-4 text-2xl font-bold antialiased uppercase text-ummaize text-center md:text-right"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<p class="site-title p-0 mt-4 text-2xl font-bold antialiased uppercase text-ummaize text-center lg:text-right"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 					<?php endif; ?>
 			</div><!-- .site-branding -->
-			<div class="search mx-auto py-2 text-center md:absolute md:right-0 md:top-0 md:pt-5"><?php get_search_form(); ?></div>
+			<div class="search mx-auto py-2 mb-4 text-center lg:absolute lg:right-0 lg:top-0 lg:pt-5"><?php get_search_form(); ?></div>
 		</div>
 		<div id="site-navigation" class="container mx-auto main-nav">
 				<nav class="main-navigation lg:p-5 lg:pt-0 lg:pb-0 relative">

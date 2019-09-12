@@ -6,10 +6,40 @@
  */
 
 .wp-block-mic-mic-card  {
-  background: $green;
-  border: 0.2rem solid $black;
-  color: $black;
-  margin: 0 auto;
-  max-width: 740px;
-  padding: 2rem;
+  border: 2px solid gray;
+  margin-bottom: 1rem;
+  width: 100%;
+  height: auto;
+
+
+  PlainText, RichText {
+    width: 100%;
+  }
+
+  .card__title {
+    // padding: 0;
+
+    &:after {
+      display: none;
+    }
+    // textarea {
+    //   display: inline-block;
+    // }
+  }
+
+  .card__url {
+    color: blue;
+    border: 1px solid blue;
+    padding: .25rem;
+    font-size: 85%;
+    margin-bottom: .5rem;
+  }
+  .card__image {
+    margin-bottom: .5rem;
+
+  }
+
+  .button {
+    margin-top: .5rem;
+  }
 }

@@ -39,18 +39,17 @@ registerBlockType( 'mic/container', {
 	edit: function( props ) {
 		// Creates a <p class='wp-block-cgb-block-mic-block'></p>.
 		return (
-			<div className={ props.className }>
-				<h4>Add your cards or accordion items here.</h4>
-				<h5>Make sure to add card or accordion class</h5>
+			<section className={ props.className }>
+				<h4>Add your cards inside this box.</h4>
 				<InnerBlocks />
-			</div>
+			</section>
 		);
 	},
 	save: function( props ) {
 		return (
-			<div className="card-container">
+			<section className="card-container">
 				<InnerBlocks.Content />
-			</div>
+			</section>
 		);
 	},
 } );

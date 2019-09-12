@@ -9,7 +9,7 @@
 import './style.scss';
 import './editor.scss';
 
-const { RichText, MediaUpload, PlainText } = wp.editor;
+const { RichText, MediaUpload, MediaUploadCheck, PlainText } = wp.editor;
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
 const { Button } = wp.components;
@@ -34,123 +34,112 @@ registerBlockType( 'mic/mic-card', {
 	category: 'mic-blocks', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	attributes: {
 		title: {
+			type: 'string',
 			source: 'text',
 			selector: '.card__title',
 		},
-		body: {
-			type: 'array',
+		bodyText: {
+			type: 'string',
 			source: 'text',
 			selector: '.card__body',
 		},
 		linkUrl: {
-			source: 'text',
+			type: 'string',
+			source: 'attribute',
 			selector: 'a',
-			attribute: 'html',
+			attribute: 'href',
 		},
 		imageUrl: {
+			source: 'attribute',
 			attribute: 'src',
-			selector: '.card__image',
+			selector: '.card__image img',
 		},
 		imageAlt: {
-			attributes: 'alt',
-			selector: '.card__image',
+			source: 'attribute',
+			attribute: 'alt',
+			selector: '.card__image img',
 		},
 	},
 	edit( { attributes, className, setAttributes } ) {
-		const getImageButton = openEvent => {
-			if ( attributes.imageUrl ) {
-				return (
-					<img
-						src={ attributes.imageUrl }
-						onClick={ openEvent }
-						className="image"
-					/>
-				);
-			}
-			return (
-				<div className="button-container">
-					<Button onClick={ openEvent } className="button button-large">
-						Pick an image
-					</Button>
-				</div>
-			);
+		const onImageSelect = imageObject => {
+			console.info( imageObject );
+			setAttributes( {
+				imageUrl: imageObject.sizes.full.url,
+				imageAlt: imageObject.alt,
+			} );
 		};
 
 		return (
-			<div className="container">
-				<PlainText
-					onChange={ content => setAttributes( { title: content } ) }
-					value={ attributes.title }
-					placeholder="Your card title"
-					className="heading"
-				/>
-				<PlainText
-					onChange={ content => setAttributes( { linkUrl: content } ) }
-					value={ attributes.linkUrl }
-					placeholder="Your card link URL"
-				/>
-				<RichText
-					onChange={ content => setAttributes( { body: content } ) }
-					value={ attributes.description }
-					placeholder="Your card text"
-				/>
-				<MediaUpload
-					onSelect={ media => {
-						setAttributes( {
-							imageAlt: media.alt,
-							imageUrl: media.url,
-						} );
-					} }
-					type="image"
-					value={ attributes.imageID }
-					render={ ( { open } ) => getImageButton( open ) }
-				/>
+			<div className={ `${ className } card bg-white flex w-100` }>
+				<div className="card__content text w-7/12 h-full">
+					<h3 className="card__title text-umblue pl-4 py-6 m-0 md:text-xl">
+						<PlainText
+							onChange={ content => setAttributes( { title: content } ) }
+							value={ attributes.title }
+							placeholder="Your card title"
+							className="heading"
+						/>
+					</h3>
+					<p className="card__body p-8 px-12 md:px-6 my-4 text-xl md:text-lg">
+						<PlainText
+							onChange={ content =>
+								setAttributes( { bodyText: content } )
+							}
+							value={ attributes.bodyText }
+							placeholder="Your card text"
+						/>
+					</p>
+					<div className="card__url">
+						<p>Card links to</p>
+						<PlainText
+							onChange={ content => setAttributes( { linkUrl: content } ) }
+							value={ attributes.linkUrl }
+							placeholder="URL for card to link to"
+						/>
+					</div>
+				</div>
+				<div className="w-5/12 h-auto">
+					<figure className="card__image">
+						<img src={ attributes.imageUrl } alt={ attributes.imageAlt } />
+					</figure>
+					<MediaUploadCheck>
+						<MediaUpload
+							onSelect={ onImageSelect }
+							type="image"
+							value={ attributes.imageUrl }
+							render={ ( { open } ) => (
+								<Button
+									onClick={ open }
+									className="button button-large">
+									Open Media Library
+								</Button>
+							) }
+						/>
+					</MediaUploadCheck>
+				</div>
 			</div>
 		);
 	},
-	save( { attributes } ) {
-		const cardImage = ( src, alt ) => {
-			if ( ! src ) {
-				return (
-					<img
-						className="card__image w-5/12 h-auto"
-						src="http://fpoimg.com/300x250"
-						alt=""
-					/>
-				);
-			}
-			if ( alt ) {
-				return (
-					<img
-						className="card__image w-5/12 h-auto"
-						src={ src }
-						alt={ alt }
-					/>
-				);
-			}
-			// No alt set, so let's hide it from screen readers
-			return (
-				<img
-					className="card__image w-5/12 h-auto"
-					src={ src }
-					alt=""
-					aria-hidden="true"
-				/>
-			);
-		};
+	save( { attributes, className } ) {
 		return (
-			<div className="card bg-white flex w-100">
+			<div className={ `${ className } card bg-white flex w-100` }>
 				<div className="card__content text w-7/12 h-full">
 					<a href={ attributes.linkUrl }>
 						<h3 className="card__title text-umblue p-4 py-6 md:text-xl">
-							<a href={ attributes.linkUrl }>{ attributes.title }</a>
+							{ attributes.title }
 						</h3>
-						<p className="card__body p-8 px-12 md:px-6 my-4 text-xl md:text-lg">
-							<a href={ attributes.linkUrl }>{ attributes.body }</a>
-						</p>
 					</a>
+					<p className="card__body p-8 px-12 md:px-6 my-4 text-xl md:text-lg">
+						<a href={ attributes.linkUrl }>
+							{ attributes.bodyText }
+						</a>
+					</p>
 				</div>
-				{ cardImage( attributes.imageUrl, attributes.imageAlt ) }
+				<div className="w-5/12 h-auto">
+					<figure className="card__image">
+						<img src={ attributes.imageUrl } alt={ attributes.imageAlt } />
+					</figure>
+				</div>
 			</div>
 		);
 	},
