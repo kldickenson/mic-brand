@@ -14,8 +14,8 @@
     z-index: 0;
 }
 .main-nav.open {
-    -webkit-transform: translateX(50%);
-    transform: translateX(50%);
+    -webkit-transform: translateX(40%);
+    transform: translateX(40%);
     position: absolute;
     z-index: 20;
 }

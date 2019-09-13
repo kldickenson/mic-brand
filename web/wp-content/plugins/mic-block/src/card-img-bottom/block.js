@@ -58,7 +58,7 @@ registerBlockType( 'mic/mic-card-img-bottom', {
 	edit( { attributes, className, setAttributes } ) {
 		const onImageSelect = imageObject => {
 			console.info( imageObject );
-			setAttributes( { imageUrl: imageObject.sizes.large.url, imageAlt: imageObject.alt } );
+			setAttributes( { imageUrl: imageObject.sizes.full.url, imageAlt: imageObject.alt } );
 		};
 
 		return (

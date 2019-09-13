@@ -9,8 +9,6 @@
  * Webpack is compiling as the input file.
  */
 
-// import './accordion-wrapper/index.js';
-// import './accordion-item/index.js';
 import './detail-block/block.js';
 import './card-container/block.js';
 import './card/block.js';
