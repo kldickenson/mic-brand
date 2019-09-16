@@ -152,6 +152,19 @@ table.center td:first-child {
   text-align: left;
 }
 
+ /* * * * * * * * Degree Tables * * * * * * * */
+table.degrees {
+  margin: 1rem 1rem 1rem 2rem;
+  font-size: .9rem;
+}
+table.degrees td {
+  margin:0;
+  padding-left: 0;
+  padding-right: 1rem;
+}
+
+
+
 @media (min-width: 768px) {
   table.advgb-table-frontend  {
     max-width: 136%;
