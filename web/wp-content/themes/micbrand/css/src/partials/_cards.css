@@ -60,22 +60,35 @@
       height: 100%;
    }
 
-   @media (min-width: 429px) {
 
+   /* precision img fitting for specific cards in card-img-bottom */
+   @media (min-width: 415px) {
+      .campus .card__image img {
+         height: 100%;
+         width: auto;
+      }
    }
-   @media (min-width: 429px) {
-
+   @media (min-width: 600px) {
+      .campus .card__image img {
+         width: 100%;
+         height: auto;
+      }
    }
-
-   @media (min-width: 556px) {
-
+   @media (min-width: 691px) {
+      .trademarks .card__image img {
+         width: 100%;
+         height: auto;
+      }
    }
-   @media (min-width: 623px) {
-
+   @media (min-width: 767px) {
+      .campus .card__image img {
+        height: 100%;
+        width: auto;
+      }
    }
-   @media (min-width: 692px) {
-
-   }
-   @media (min-width: 1152px) {
-
+   @media (min-width: 1280px) {
+      .campus .card__image img {
+        width: 100%;
+        height: auto;
+      }
    }

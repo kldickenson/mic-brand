@@ -18,7 +18,7 @@
 
     &:after {
       padding-left: 0.5rem;
-      content: url(/wp-content/themes/micbrand/img/arrow-alt-circle-right-solid-sm.svg);
+      content: url('/wp-content/themes/micbrand/img/arrow-alt-circle-right-solid-sm.svg');
       width: auto;
       height: 1rem;
     }
@@ -33,6 +33,24 @@
     clip-path: polygon(0 0, 20px 0, 40px 20px, 60px 0, 100% 0, 100% 250px, 0 250px);
     background: gray 50% 50% no-repeat;
 
+    img {
+      height: 100%;
+      width: auto;
+      object-fit: cover;
+      /* precision img fitting for card-img-bottom */
+      @media (min-width: 415px) {
+        width: 100%;
+        height: auto;
+      }
+      @media (min-width: 768px) {
+        height: 100%;
+        width: auto;
+      }
+      @media (min-width: 1280px) {
+        width: 100%;
+        height: auto;
+     }
+    }
   }
-}
 
+}

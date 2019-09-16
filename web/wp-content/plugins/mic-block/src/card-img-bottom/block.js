@@ -58,11 +58,15 @@ registerBlockType( 'mic/mic-card-img-bottom', {
 	edit( { attributes, className, setAttributes } ) {
 		const onImageSelect = imageObject => {
 			console.info( imageObject );
-			setAttributes( { imageUrl: imageObject.sizes.full.url, imageAlt: imageObject.alt } );
+			setAttributes( {
+				imageUrl: imageObject.sizes.full.url,
+				imageAlt: imageObject.alt,
+			} );
 		};
 
 		return (
-			<div className={ `${ className } card image-bottom bg-white w-100 md:w-1/3 lg:w-1/4 flex-grow mb-8 md:ml-8` }>
+			<div
+				className={ `${ className } card image-bottom bg-white w-100 md:w-1/3 lg:w-1/4 flex-grow mb-8 md:ml-8` }>
 				<h3 className="card__title text-umblue pl-4 py-6 m-0 md:text-xl">
 					<PlainText
 						onChange={ content => setAttributes( { title: content } ) }
