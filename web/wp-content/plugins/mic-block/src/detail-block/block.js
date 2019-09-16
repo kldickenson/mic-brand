@@ -82,7 +82,7 @@ registerBlockType( 'mic/mic-detail-block', {
 					value={ content }
 				/>
 				<InnerBlocks
-					allowedBlocks={ [ 'core/paragraph', 'core/list' ] }
+					allowedBlocks={ [ 'core/paragraph', 'core/list', 'core/html' ] }
 				/>
 			</details>
 		);
