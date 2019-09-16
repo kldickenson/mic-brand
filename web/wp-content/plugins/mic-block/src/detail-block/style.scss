@@ -6,7 +6,7 @@
 
 $summary-color:  #000;
 $summary-background-color: #bdbdbd;
-$summary-font-size: 1.25rem;
+$summary-font-size: 1.15rem;
 $content-background-color: #ffffff;
 $content-border-color: #edecec;
 
@@ -43,9 +43,10 @@ $content-border-color: #edecec;
 			content: url(//wp-content/themes/micbrand/img/add-solid.svg);
 			float: right;
 			padding-left: 1rem;
-			width: 1.25rem;
+			width: 2rem;
 			height: auto;
-   	}
+		}
+
 	}
 
 	p  {

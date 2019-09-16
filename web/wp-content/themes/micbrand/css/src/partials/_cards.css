@@ -6,7 +6,7 @@
 
    .card {
       margin-bottom: 4rem;
-      height: 250px;
+      /* height: 250px; */
       background: white;
    }
   .card__title {
@@ -33,22 +33,62 @@
       text-decoration: none;
    }
 
+   .card figure img {
+      margin-top: 0;
+   }
+
 
    /* Custom image placement for Homepage cards */
    .logos img {
-     object-position: 85% 50% !important;
+      max-width: 300%;
    }
-   /* .design img {
-   } */
+   .design img {
+      max-width: 300%;
+
+   }
    .editorial img {
-     object-position: 40% 75% !important;
+      max-width: 300%;
+      height: 100%
    }
    .campus img {
-     object-position: 45% 60% !important;
+      max-width: 300%;
+
    }
    .trademark img {
-     object-position: 0 70% !important;
-   }
-   @media (min-width: 768px) {
+      max-width: 300%;
 
+      height: 100%;
+   }
+
+
+   /* precision img fitting for specific cards in card-img-bottom */
+   @media (min-width: 415px) {
+      .campus .card__image img {
+         height: 100%;
+         width: auto;
+      }
+   }
+   @media (min-width: 600px) {
+      .campus .card__image img {
+         width: 100%;
+         height: auto;
+      }
+   }
+   @media (min-width: 691px) {
+      .trademarks .card__image img {
+         width: 100%;
+         height: auto;
+      }
+   }
+   @media (min-width: 767px) {
+      .campus .card__image img {
+        height: 100%;
+        width: auto;
+      }
+   }
+   @media (min-width: 1280px) {
+      .campus .card__image img {
+        width: 100%;
+        height: auto;
+      }
    }

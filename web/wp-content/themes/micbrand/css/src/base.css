@@ -69,6 +69,16 @@ p.intro {
    list-style: disc;
    margin-left: 1.125rem;
 }
+
+.site-main dl {
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
+.site-main dt {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
 figure {
   margin-bottom: 4rem;
   margin-right: 2rem;
