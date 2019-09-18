@@ -48,6 +48,11 @@ p.intro {
   clear: both;
 }
 
+/* hr {
+  margin-bottom: 2rem;
+
+} */
+
 /* Making sure these are scoped to the page content area */
 .site-main a {
   text-decoration: none;
