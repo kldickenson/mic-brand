@@ -71,7 +71,29 @@ tfoot th, tfoot td {
   padding: .5rem 1rem;
 }
 
+ /* * * * * * * * Table - Plain with digital assets * * * * * * * */
 
+table.plain {
+  width: 100%;
+  margin: 2rem 0;
+}
+table.plain tbody tr:last-child *,
+table.plain tbody tr:first-child *
+{
+  border: 0;
+}
+table.plain a {
+  display: inline-block;
+  margin-top: .25rem;
+}
+table.plain tbody td,
+table.plain tbody th {
+  padding: 0 2rem 2rem 0;
+}
+
+table.plain img {
+  width: 100%;
+}
  /* * * * * * * * Table with Swatches * * * * * * * */
 table.swatches td {
   padding: 1rem 0;
