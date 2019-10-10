@@ -3,7 +3,7 @@ Contributors: JoomUnited
 Tags: gutenberg, gutenberg blocks, advanced gutenberg, editor, blocks
 Requires at least: 5.0
 Tested up to: 5.2.3
-Stable tag: 2.1.2
+Stable tag: 2.1.5
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -139,7 +139,17 @@ The Advanced Gutenberg Custom CSS can be created from the plugin configuration a
 
 == Changelog ==
 
+= 2.1.5 =
+ * Fix : Material fonts missing
+
+= 2.1.4 =
+ * Add : Add Opt In feedback on plugin first disabling & review message
+
 = 2.1.3 =
+ * Fix : Default editor width now apply the Gutenberg default width (750px)
+ * Fix : HTML tag is rendered on accordions header
+
+= 2.1.2 =
  * Fix : Count Up block: br tag is shown as text on front-end
  * Fix : Count Up block: check counter type to avoid render NaN
 

@@ -104,6 +104,7 @@ table.swatches th {
 }
 .site-main .swatches p {
   display: inline-block;
+  margin-bottom: 0
 }
 .swatch {
   width: 2rem;
