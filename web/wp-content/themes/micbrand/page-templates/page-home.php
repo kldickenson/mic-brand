@@ -15,7 +15,7 @@
 	<span class="font-extrabold" ><?php echo get_theme_mod( 'micbrand_home_head' ); ?>.</span>
 	</h2>
 </section>
-<img src="https://brand.lndo.site/wp-content/themes/micbrand/img/UM_logo_footer.svg" alt="University of Michigan logo" class="homepage-bug" />
+<img src="/wp-content/themes/micbrand/img/UM_logo_footer.svg" alt="University of Michigan logo" class="homepage-bug" />
 <div id="content" class="site-content container mx-auto px-4 pt-2">
 	<div id="primary" class="content-area py-8 md:p-0">
 		<main id="main" class="site-main">
