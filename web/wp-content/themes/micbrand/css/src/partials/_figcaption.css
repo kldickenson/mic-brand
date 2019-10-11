@@ -1,0 +1,32 @@
+.caption-box img {
+   width: 100%;
+}
+.caption-box figcaption {
+   width: 100%;
+   position: relative;
+   padding: 2.5rem 1rem 1rem;
+    border-bottom: 1px solid #000;
+    background: url(../../img/figcaption-top-border.png) 50% top no-repeat,
+    url(../../img/figcaption-side-border.png) left 1.1rem no-repeat,
+    url(../../img/figcaption-side-border.png) right 1.1rem no-repeat;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+@media (min-width: 768px) {
+   .caption-box img {
+      width: 75%;
+   }
+   .caption-box figcaption {
+      width: 75%;
+   }
+}
+@media (min-width: 1280px) {
+   .caption-box img {
+      width: 50%;
+   }
+   .caption-box figcaption {
+      width: 50%;
+   }
+}
