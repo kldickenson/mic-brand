@@ -2,8 +2,8 @@
 Contributors: JoomUnited
 Tags: gutenberg, gutenberg blocks, advanced gutenberg, editor, blocks
 Requires at least: 5.0
-Tested up to: 5.2.3
-Stable tag: 2.1.5
+Tested up to: 5.2.4
+Stable tag: 2.2.0
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -36,8 +36,8 @@ Advanced Gutenberg adds the missing blocks and configuration you need to build p
 - Map block: load a Google map position with zoom, icon, tooltip, color...
 - Advanced Table block: create tables with style like color, border
 - Accordion block: display content in a fully configurable accordion
-- Tabs block: display content in a fully tabbed UX
-- Testimonial block: define avatar, title, text, colors, slider
+- Tabs block: display content in a tabbed UX with nested blocks inside
+- Testimonial block: define avatar, title, text, slider or static
 - Contact Form block: get email and export contact form data
 - Email Opt-In block: get email and export data
 - WordPress login block
@@ -138,6 +138,19 @@ The Advanced Gutenberg Custom CSS can be created from the plugin configuration a
 1. Latest posts and WooCommerce products blocks
 
 == Changelog ==
+
+= 2.2.0 =
+ * Add : Tabs block: Rework Tabs block, allow nested block in tabs
+ * Add : Tabs block: news design and new option for design
+ * Add : Testimonial block: Improve slider view, new option for slider effects
+ * Add : Testimonial block: add design options, add avatar position setting
+ * Add : Columns block: Add max height for each line
+ * Add : Adv Button block: Add margin settings
+ * Add : Accordions block: Show settings on all accordion levels
+ * Add : Maps block: Add settings to show marker tooltip by default
+ * Add : Adv Image block: Add focal point picker, block alignment, default opacity settings
+ * Add : Add a defulat svg image for test purpose when none is selected
+ * Add : Add back profile list
 
 = 2.1.5 =
  * Fix : Material fonts missing

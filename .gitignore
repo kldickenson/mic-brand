@@ -15,6 +15,9 @@
 /web/wp-content/plugins/hello.php
 /web/wp-content/plugins/mic-block/dist/
 
+/web/assets/*
+/web/emails/*
+
 /web/.htaccess
 /web/license.txt
 /web/readme.html

@@ -1,0 +1,27 @@
+/* - - - - -  For U-M logo page, minimum size  - - - - - */
+.logo-bkgd-image {
+   height: 100px;
+   background: url(/../assets/brand/style-guide/logo-guidelines/LogoMinimumSize.png) left 50% no-repeat;
+   background-size: auto 100px;
+}
+.logo-bkgd-image p {
+   margin-top: 30px;
+   font-size: 90%;
+   line-height: 1.2;
+   text-align: left;
+   padding-left: 50%;
+}
+
+.sig-bkgd-image {
+   height: 100px;
+   background: url(/../assets/brand/style-guide/logo-guidelines/SignatureMinimumSize.png) right 50% no-repeat;
+   background-size: contain;
+}
+.sig-bkgd-image p {
+   font-size: 90%;
+   line-height: 1.2;
+   margin-top: 34px;
+}
+.wp-block-mic-mic-card.design-resources-colors figure.card__image img {
+   height: auto;
+}

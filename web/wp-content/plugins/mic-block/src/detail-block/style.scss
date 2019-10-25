@@ -29,9 +29,9 @@ $content-border-color: #edecec;
 		border: 1px solid $summary-background-color;
 		color: $summary-color;
 		font-size: $summary-font-size;
-		font-weight: 700;
+		font-weight: 600;
 		line-height: 1;
-      text-transform: uppercase;
+      text-transform: capitalize;
 		padding: 1rem;
 		position: relative;
 

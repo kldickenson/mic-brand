@@ -80,7 +80,7 @@ registerBlockType( 'mic/mic-card', {
 							className="heading"
 						/>
 					</h3>
-					<p className="card__body p-8 px-12 md:px-6 my-4 text-xl md:text-lg">
+					<p className="card__body p-4 px-12 md:px-6 my-4 text-xl md:text-lg">
 						<PlainText
 							onChange={ content =>
 								setAttributes( { bodyText: content } )
@@ -129,16 +129,14 @@ registerBlockType( 'mic/mic-card', {
 							{ attributes.title }
 						</h3>
 					</a>
-					<p className="card__body p-8 px-12 md:px-6 my-4 text-xl md:text-lg">
+					<p className="card__body p-4 px-12 md:px-6 my-4 text-xl md:text-lg">
 						<a href={ attributes.linkUrl }>
 							{ attributes.bodyText }
 						</a>
 					</p>
 				</div>
 				<div className="w-5/12 h-auto">
-					<figure className="card__image">
-						<img src={ attributes.imageUrl } alt={ attributes.imageAlt } />
-					</figure>
+					<figure className="card__image"><img src={ attributes.imageUrl } alt={ attributes.imageAlt } /></figure>
 				</div>
 			</div>
 		);

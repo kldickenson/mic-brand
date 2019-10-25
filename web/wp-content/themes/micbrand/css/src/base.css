@@ -1,8 +1,7 @@
 /* purgecss start ignore */
 /* * * * * * * * * BRAND specific CSS * * * * * * * * */
-
-html {
-  font-family: "Montserrat";
+body {
+  font-family: "Montserrat", sans-serif;
   line-height: 1.4rem;
 }
 
@@ -30,7 +29,7 @@ h4 {
 }
 h5 {
   font-size: 1.125rem; /* text-lg */
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
@@ -96,7 +95,7 @@ figure img {
 figcaption {
   padding-top: .25rem;
   margin-bottom: 1rem;
-  font: bold .85rem "Roboto";
+  font-size: .85rem;
 }
 p {
   margin-bottom: 1rem;
