@@ -1,5 +1,9 @@
-.caption-box img {
+/* .caption-box img {
    width: 100%;
+} */
+figure.caption-box {
+   float: none;
+   margin: 0 0 1rem 0;
 }
 .caption-box figcaption {
    width: 100%;
@@ -12,21 +16,24 @@
     font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: -1px;
+    color: #000;
+}
+.caption-box figcaption.lowercase {
+   letter-spacing: 0;
+   text-transform: lowercase;
+   font-size: .9rem;
 }
 
-@media (min-width: 768px) {
+.caption-box figcaption.lowercase strong {
+   text-transform: uppercase;
+   color: red;
+}
+
+/* @media (min-width: 768px) {
    .caption-box img {
       width: 75%;
    }
    .caption-box figcaption {
       width: 75%;
    }
-}
-@media (min-width: 1280px) {
-   .caption-box img {
-      width: 50%;
-   }
-   .caption-box figcaption {
-      width: 50%;
-   }
-}
+} */

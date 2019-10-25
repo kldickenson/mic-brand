@@ -1,3 +1,5 @@
+/* purgecss start ignore */
+
 /* * * * * * * * Menu * * * * * * * */
 
 /* * * * Mobile Menu - base styles * * * */
@@ -123,7 +125,8 @@
     background: url(../../img/iconmonstr-home-6.svg) 50% 50% no-repeat;
     background-size: 1rem;
   }
-  .main-nav li.current-menu-item {
+  .main-nav li.current-menu-item,
+  .main-nav li.current-page-ancestor {
     border-color:#587abc;
   }
   .main-nav li:last-child a {
@@ -134,3 +137,5 @@
     border-right: none;
   }
 }
+
+/* purgecss end ignore */

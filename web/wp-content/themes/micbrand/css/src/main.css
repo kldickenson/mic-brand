@@ -22,6 +22,8 @@
 
 @import "partials/_sidebar.css";
 
+@import "partials/_special-cases.css";
+
 @import "custom.css";
 
 @import "tailwindcss/utilities";
