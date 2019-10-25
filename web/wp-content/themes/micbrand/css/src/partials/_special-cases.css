@@ -22,6 +22,16 @@
    line-height: 1.2;
    margin-top: 34px;
 }
-.wp-block-mic-mic-card.design-resources-colors figure.card__image img {
-   height: auto;
+
+/* - - - - -  For Photo Safety Tips page, left floating iamges  - - - - - */
+
+
+@media (min-width: 768px){
+  .full-width.photo-safety {
+   width: 115%;
+    margin-left: -15%;
+  }
+  .full-width.photo-safety figure {
+     margin-left: 0;
+  }
 }

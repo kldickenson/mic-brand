@@ -60,6 +60,9 @@
       height: 100%;
    }
 
+   /* .design-resources-colors img {
+      height: 100%;
+   } */
 
    /* precision img fitting for specific cards in card-img-bottom */
    @media (min-width: 415px) {
@@ -90,5 +93,8 @@
       .campus .card__image img {
         width: 100%;
         height: auto;
+      }
+      .wp-block-mic-mic-card.design-resources-colors figure.card__image img {
+         height: auto;
       }
    }

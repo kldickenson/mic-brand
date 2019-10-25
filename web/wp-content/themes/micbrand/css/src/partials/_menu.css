@@ -31,7 +31,7 @@
   display: inline-block;
   padding-left: 0;
   border-bottom: 4px solid white;
-  width: 100%;
+  width: 60%;
 }
 .main-nav li {
   background: #00274c;
@@ -39,7 +39,7 @@
 }
 .main-nav li a {
   display: block;
-  height: 2.5rem;
+  min-height: 2.5rem;
   padding: 0.5rem 1rem;
   margin-right: 1rem;
   text-align: left;
