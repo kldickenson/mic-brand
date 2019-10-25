@@ -129,7 +129,7 @@ registerBlockType( 'mic/mic-card', {
 							{ attributes.title }
 						</h3>
 					</a>
-					<p className="card__body p-4 px-12 md:px-6 my-4 text-xl md:text-lg">
+					<p className="card__body p-4 md:px-6 my-4 text-xl md:text-lg">
 						<a href={ attributes.linkUrl }>
 							{ attributes.bodyText }
 						</a>

@@ -122,6 +122,9 @@ form.search-form {
 
 
 /* * * * * * * * Footer * * * * * * * */
+.site-footer {
+  margin-top: 4rem;
+}
 .footer-logo {
   width: 125px;
   height: auto;
