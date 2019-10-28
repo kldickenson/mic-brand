@@ -4,27 +4,15 @@
       flex-wrap: wrap;
    }
 
-   .card {
-      margin-bottom: 4rem;
-      /* height: 250px; */
-      background: white;
-   }
-  .card__title {
-      padding: 1.25rem 1.25rem 0 1.25rem;
-      border-bottom: 1px solid rgba(0,0,0,.1);
-   }
-   .card__title:after {
-      padding-left: 0.5rem;
-      content: url(../../img/arrow-alt-circle-right-solid-sm.svg);
-      width: auto;
-      height: 1rem;
-   }
    .card p:after {
       padding-left: 0.5rem;
       content: ">";
       color: #024794;
       font-weight: 700;
    }
+    .card:hover p:after {
+       color: #ffcd05;
+    }
    .card a {
       text-decoration: none;
       color: inherit;
@@ -39,30 +27,11 @@
 
 
    /* Custom image placement for Homepage cards */
-   .logos img {
-      max-width: 300%;
-   }
-   .design img {
-      max-width: 300%;
 
-   }
-   .editorial img {
-      max-width: 300%;
-      height: 100%
-   }
-   .campus img {
-      max-width: 300%;
-
-   }
-   .trademark img {
-      max-width: 300%;
-
+   .trademark .card__image img {
+      width: 300%;
       height: 100%;
    }
-
-   /* .design-resources-colors img {
-      height: 100%;
-   } */
 
    /* precision img fitting for specific cards in card-img-bottom */
    @media (min-width: 415px) {

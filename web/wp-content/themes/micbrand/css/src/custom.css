@@ -69,6 +69,19 @@ form.search-form {
 
 /* * * * * * * * content #primary.content-area * * * * * * * */
 
+
+
+  /* - - to hide page title which is already included in the sub-menu - - */
+  .site-main header.entry-header {
+    text-indent: -5000px;
+    height: 1px;
+    line-height: 1px;
+  }
+
+  .site-main .entry-content {
+    margin-top: 2rem;
+  }
+
 /* showing left-hand sidebar */
 @media (min-width: 768px) {
   .content-area {
@@ -78,7 +91,7 @@ form.search-form {
   }
   .site-main {
     margin: 0 0 0 20rem;
-    padding-top: 2rem;
+    padding-top: 1rem;
   }
   .site-content .sidebar {
     display: block;
@@ -115,9 +128,7 @@ form.search-form {
 /* * * * * * * * site-content content-area site-main * * * * * * * */
 /* hiding title since in sidebar menu  */
 @media (min-width: 768px) {
-  .site-main .entry-title {
-    text-indent: -5000px;
-  }
+
 }
 
 
