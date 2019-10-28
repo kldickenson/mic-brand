@@ -17,14 +17,9 @@
   }
 
   .card__title {
-    // padding: 0;
-
     &:after {
       display: none;
     }
-    // textarea {
-    //   display: inline-block;
-    // }
   }
 
   .card__url {
@@ -36,10 +31,21 @@
   }
   .card__image {
     margin-bottom: .5rem;
-
   }
 
   .button {
     margin-top: .5rem;
+  }
+
+  &:hover, &:focus {
+    background-color: white;
+
+    .card__title {
+      color: #000;
+      background: #fff;
+    }
+    .card__body {
+      color: #000;
+    }
   }
 }

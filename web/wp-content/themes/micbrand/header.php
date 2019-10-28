@@ -26,11 +26,14 @@
 
 	<header id="masthead" class="site-header bg-umblue relative">
 		<div class="container mx-auto relative logo-title-search">
-			<button id="hamburger" class="menu-toggle hamburger" aria-controls="primary-menu" aria-expanded="false"><?php //esc_html_e( 'Primary Menu', 'micbrand' ); ?>
-				<span class="hamburger-box">
-					<span class="hamburger-inner"></span>
-				</span>
-			</button>
+			<div class="hamburger">
+				<button id="hamburger" type="button" name="mobile-main-menu" aria-label="primary-menu" aria-controls="primary-menu" aria-expanded="false"><?php //esc_html_e( 'Primary Menu', 'micbrand' ); ?>
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
+				</button>
+				<p class="text-center text-white tx-small lg:hidden ">Menu</p>
+			</div>
 			<div class="logo inline-block p-3 lg:p-5 lg:pb-0 lg:m-0 lg:w-1/2"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="/wp-content/themes/micbrand/img/VPComm_Logo_header.svg" alt="Vice President for Communications, University of Michigan" class="logo-image" /></a></div>
 			<div class="site-branding py-2 mx-auto lg:text-right lg:m-0 lg:mr-5 lg:p-0">
 				<?php
@@ -53,7 +56,6 @@
 						'depth'          => 1,
 					) ); ?>
 			</nav><!-- #site-navigation -->
-
 		</div>
 	</header><!-- #masthead -->
 	<div id="hamburger-fade" class="absolute inset-0 bg-umblue opacity-75 hamburger-fade"></div>

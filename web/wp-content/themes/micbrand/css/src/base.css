@@ -7,9 +7,21 @@ body {
 
 h1, h2, h3, h4, h5 {
   text-transform: uppercase;
-  color: #00274c;;
-  margin-bottom: 1rem;
+  color: #00274c;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
   line-height: 1em;
+}
+.site-main h3>a, .site-main h4>a, .site-main h5>a {
+  color: #00274c;
+  text-decoration: underline;
+}
+h3>a:hover, h3>a:focus, h4>a:hover, h4>a:focus, h5>a:hover, h5>a:focus {
+  color: #024794;
+}
+
+.entry-content h3:first-child {
+margin-top: 0;
 }
 h1, h2 {
   color: #ffcb05;
@@ -54,8 +66,8 @@ p.intro {
 
 /* Making sure these are scoped to the page content area */
 .site-main a {
-  text-decoration: none;
   color: #024794;
+  text-decoration: underline;
 }
 .site-main a:hover,
 .site-main a:focus {

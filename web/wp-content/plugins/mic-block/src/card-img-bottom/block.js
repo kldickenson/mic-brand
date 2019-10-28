@@ -38,6 +38,11 @@ registerBlockType( 'mic/mic-card-img-bottom', {
 			source: 'text',
 			selector: '.card__title',
 		},
+		bodyText: {
+			type: 'string',
+			source: 'text',
+			selector: '.card__body',
+		},
 		linkUrl: {
 			type: 'string',
 			source: 'attribute',
@@ -75,7 +80,13 @@ registerBlockType( 'mic/mic-card-img-bottom', {
 						className="heading"
 					/>
 				</h3>
-
+				<p className="card__body p-4 px-12 md:px-6 my-4 text-xl md:text-lg">
+					<PlainText
+						onChange={ content => setAttributes( { bodyText: content } ) }
+						value={ attributes.bodyText }
+						placeholder="Your card text"
+					/>
+				</p>
 				<figure className="card__image">
 					<img src={ attributes.imageUrl } alt={ attributes.imageAlt } />
 				</figure>
@@ -105,13 +116,20 @@ registerBlockType( 'mic/mic-card-img-bottom', {
 	save( { attributes, className } ) {
 		return (
 			<div
-				className={ `${ className } card image-bottom bg-white w-100 md:w-1/3 lg:w-1/4 flex-grow mb-8 md:ml-8` }>
+				className={ `${ className } card image-bottom w-100 md:w-1/3 lg:w-1/4 flex-grow mb-8 md:ml-8 relative` }>
 				<a href={ attributes.linkUrl }>
 					<h3 className="card__title">{ attributes.title }</h3>
 				</a>
-				<figure className="card__image">
-					<img src={ attributes.imageUrl } alt={ attributes.imageAlt } />
-				</figure>
+				<div className="card_content">
+					<div className="overlay absolute w-full">
+						<p className="card__body p-4 md:px-6 my-4 text-xl md:text-lg">
+							<a href={ attributes.linkUrl }>{ attributes.bodyText }</a>
+						</p>
+					</div>
+					<figure className="card__image">
+						<img src={ attributes.imageUrl } alt={ attributes.imageAlt } />
+					</figure>
+				</div>
 			</div>
 		);
 	},
