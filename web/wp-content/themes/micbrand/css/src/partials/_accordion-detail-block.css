@@ -14,10 +14,7 @@
       color: white;
       text-decoration: none;
    }
-   .accordion[open] summary {
-      color: white;
-      /* background: #00274c; */
-   }
+
 
    /* * * * open/closed icons * * * */
    /* .accordion summary::after {

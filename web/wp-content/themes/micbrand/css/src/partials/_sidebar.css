@@ -75,6 +75,10 @@
   background-color:#ffcb05;
   color:black;
 }
+.child-sidebar-menu a:active {
+  background-color: #00274c;
+  color: white;
+}
 
 @media (min-width: 768px) {
 
