@@ -1,0 +1,40 @@
+   h3.downloads, h4.downloads {
+      padding-bottom: .5rem;
+      border-bottom: 1px solid #00274c;
+   }
+
+   .downloads .wrapper {
+      margin-top: 1rem;
+      padding: 2rem;
+      background: transparent left top no-repeat;
+      background-size: cover;
+   }
+   .downloads .wrapper.primary {
+      background-image: url(/wp-content/themes/micbrand/img/primary-background.svg);
+   }
+   .downloads .wrapper.horizontal {
+      background-image: none;
+      padding: 1rem;
+   }
+   .downloads .wrapper.horizontal.bkgd {
+      background-image:  url(/wp-content/themes/micbrand/img/horizontal-background.svg);
+   }
+
+   .downloads figure {
+      float: none;
+   }
+   .downloads img {
+      margin-top: 0;
+   }
+   .downloads figcaption {
+      margin-top: 1rem;
+      padding-top: 0;
+   }
+   .downloads p {
+      text-align: left;
+      margin-bottom: .5rem;
+       color: #000;
+   }
+   .downloads p.text-center {
+      text-align: center;
+   }
