@@ -5,8 +5,8 @@
 /* * * * Mobile Menu - base styles * * * */
 .main-nav {
     width: 100%;
-    -webkit-transform: translateX(-60vh);
-    transform: translateX(-60vh);
+    -webkit-transform: translateX(-65vh);
+    transform: translateX(-65vh);
     position: absolute;
     transition: -webkit-transform .15s ease-in;
     transition: transform .15s ease-in;

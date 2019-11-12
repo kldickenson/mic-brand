@@ -1,4 +1,4 @@
-<form role="search" method="get" class="search-form bg-umblue border border-white" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+<form role="search" method="get" class="search-form bg-umblue border border-white" action="<?php echo esc_url( home_url( '/' ) ); ?>"><a name="search"></a>
     <label for="search" class="screen-reader-text"><?php echo _x( 'Search for:', 'label' ); ?></label>
     <input type="search" id="search" class="search-field bg-transparent text-white p-1 text-sm opacity-100" aria-label="search text"
                placeholder="<?php echo esc_attr_x( 'SEARCH', 'placeholder' ); ?>"

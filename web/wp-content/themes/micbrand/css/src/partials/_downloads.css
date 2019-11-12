@@ -1,40 +1,55 @@
-   h3.downloads, h4.downloads {
-      padding-bottom: .5rem;
-      border-bottom: 1px solid #00274c;
-   }
+/* - - - - for Downloadables section - - - - */
+h3.downloads, h4.downloads {
+   padding-top: .5rem;
+   border-top: 1px solid #00274c;
+}
 
-   .downloads .wrapper {
-      margin-top: 1rem;
-      padding: 2rem;
-      background: transparent left top no-repeat;
-      background-size: cover;
-   }
-   .downloads .wrapper.primary {
-      background-image: url(/wp-content/themes/micbrand/img/primary-background.svg);
-   }
-   .downloads .wrapper.horizontal {
-      background-image: none;
-      padding: 1rem;
-   }
-   .downloads .wrapper.horizontal.bkgd {
-      background-image:  url(/wp-content/themes/micbrand/img/horizontal-background.svg);
-   }
+.downloads .wrapper {
+   /* margin-top: 1rem;
+   padding: 2rem; */
+   background: transparent left top no-repeat;
+   background-size: cover;
+}
+.downloads .wrapper.primary {
+   background-image: url(/wp-content/themes/micbrand/img/primary-background.svg);
+}
+.downloads .wrapper.horizontal {
+   background-image: none;
+   padding: 1rem;
+}
+.downloads .wrapper.horizontal.bkgd {
+   background-image:  url(/wp-content/themes/micbrand/img/horizontal-background.svg);
+}
 
-   .downloads figure {
-      float: none;
-   }
+.downloads figure {
+   float: none;
+}
+.downloads img {
+   margin-top: 0;
+   width: 75%;
+   margin: 0 auto;
+}
+.downloads img.small {
+   width: 50%;
+}
+.downloads .primary img {
+   -webkit-box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.5);
+   -moz-box-shadow: 0px 0px 2px rgba(0,0,0,0.5);
+   box-shadow: 0px 0px 2px rgba(0,0,0,0.5);
+}
+.downloads figcaption {
+   margin-top: 1rem;
+   margin-bottom: .5rem;
+   padding-top: 0;
+   text-align: center;
+   color: #000;
+}
+
+@media (min-width: 640px) {
    .downloads img {
-      margin-top: 0;
+      width: 100%;
    }
    .downloads figcaption {
-      margin-top: 1rem;
-      padding-top: 0;
-   }
-   .downloads p {
       text-align: left;
-      margin-bottom: .5rem;
-       color: #000;
    }
-   .downloads p.text-center {
-      text-align: center;
-   }
+}

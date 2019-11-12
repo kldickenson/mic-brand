@@ -1,3 +1,40 @@
+/* - - - - -  For 404  - - - - - */
+/* .error404 .content-area {
+   margin: 0;
+   float: none;
+}
+.error404 .site-main {
+   margin: 0;
+} */
+.error404 #secondary {
+   margin-top: 9rem;
+   display: none;
+}
+.error404 figure {
+   float: none;
+   width: 75%;
+}
+.error404 .wrapper {
+   padding: .25rem .5rem .5rem;
+   background-color: rgb(24, 69, 58)
+}
+.error404 .wrapper img {
+   border: .25rem solid #fff;
+}
+.error404 .buckeye {
+   background-color: rgb(187, 0,0)
+}
+.error404 .buckeye img {
+   border-color: #666;
+}
+
+@media (min-width: 768px) {
+   .error404 #secondary {
+      display: block;
+   }
+}
+
+
 /* - - - - -  For U-M logo page, minimum size  - - - - - */
 .logo-bkgd-image {
    height: 100px;
@@ -23,9 +60,98 @@
    margin-top: 34px;
 }
 
-/* - - - - -  For Photo Safety Tips page, left floating iamges  - - - - - */
+/* - - - - -  For About Our Brand - venn diagram text  - - - - - */
+.venn {
+   position: relative;
+   /* padding: 4rem 25% 3rem; */
+   padding: 0 1rem;
+   margin: 1rem 0;
+}
+.venn figure {
+   float: none;
+   width: 75%;
+   margin: 0 auto;
+}
+.venn > div {
+   position: relative;
+   float: left;
+   font-size: 70%;
+   width: 33%;
+   padding-right: .5rem;
+   padding-bottom: 1.5rem;
+}
+.venn h4 {
+   margin: 0;
+   color: rgba(0,0,0,.65);
+   font-size: .85rem;
+   font-weight: 700;
+}
+.venn p {
+   margin-bottom: 0;
+   color: rgba(0,0,0,.65);
+  line-height: 1.4em;
+}
+/* small */
+@media (min-width: 640px) {
+   .venn {
+      padding: 0 25%;
+   }
+   .venn figure {
+      width: 100%;
+   }
+   .venn >div {
+      width: 23%;
+      position: absolute;
+   }
+   .venn .ethos {
+      top: 25%;
+      left: 0;
+      width: 23%;
+   }
+   .venn .academic {
+      top: 0;
+      right: 0;
+      text-align: right;
+   }
+   .venn .history {
+      width: 23%;
+      top: 50%;
+      right: 0;
+      text-align: right;
+   }
+}
+/* medium */
+@media (min-width: 768px) {
+   .venn {
+      padding: 2rem 25% 0.5rem;
+   }
+   .venn .academic {
+      width: 30%;
+   }
+}
+/* large */
+@media (min-width: 1024px) {
+   .venn {
+      padding-bottom: 0;
+   }
+   .venn > div {
+      font-size: 85%;
+   }
+   .venn h4 {
+      font-size: 1.125rem;
+   }
+}
 
+/* - - - - -  For About Our Brand - brand-house  - - - - - */
+.brand-house {
+   float: none;
+   margin: 0;
+}
+.brand-house img {
+   margin-top: 0;
+}
 
+/* - - - - -  For Photography page, left floating images  - - - - - */
 @media (min-width: 768px){
   .full-width.photo-safety {
    width: 115%;
@@ -35,3 +161,55 @@
      margin-left: 0;
   }
 }
+
+/* - - - - -  For Typography page, font recommendations image with links  - - - - - */
+   .fonts {
+      position: relative;
+      width: 100%;
+   }
+   .fonts img {
+      width: 100%;
+      height: auto;
+   }
+   .fonts a {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 76%;
+      height: 18%;
+      margin-left: 1rem;
+      color: #edecec;
+      text-indent: -1000px;
+   }
+   .fonts a:hover,
+   .fonts a:focus {
+      border-bottom: 1px solid #000;
+
+   }
+   .fonts a.plex {
+      top: 6%;
+   }
+   .fonts a.montserrat {
+      top: 26%;
+      width: 42%;
+   }
+   .fonts a.nunito {
+      top: 47%;
+      width: 41%
+   }
+   .fonts a.merriweather {
+      top: 68%;
+      width: 50%;
+   }
+   .fonts a.playfair {
+      width: 53%;
+      height: 30%;
+      top: 16%;
+      /* margin-left: 1.1rem; */
+   }
+   .fonts a.oswald {
+      width: 19%;
+      height: 30%;
+      top: 53%;
+  }
