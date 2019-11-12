@@ -51,10 +51,10 @@
   color: white;
 }
 /* Parent / Grandparent */
-.child-sidebar-menu .current_page_ancestor > a {
+/* .child-sidebar-menu .current_page_ancestor > a {
   background-color:rgba(0, 39, 76, .25);
   color: black;
-}
+} */
 /* Grandchild */
 .children {
   display: block;
@@ -66,8 +66,10 @@
   color: black;
 }
 /* grandchild of active menu item */
-.current_page_item .children a {
-  background-color:rgba(0, 39, 76, .25);
+.children .current_page_item > a {
+  background-color:#c7c8ca;
+  color: #000;
+  border-bottom: 1px solid #fff;
 }
 /* All - hover */
 .child-sidebar-menu a:hover,
